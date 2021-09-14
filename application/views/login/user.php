@@ -32,15 +32,15 @@
 
                                 <h4 class="mb-1">Login</h4>
                                 <!-- Email input -->
-                                <div class="form-outline mb-4">
+                                <div class="form-group mb-4">
+                                    <label for="form1Example1">Email address</label>
                                     <input type="email" id="form1Example1" class="form-control" name="email" />
-                                    <label class="form-label" for="form1Example1">Email address</label>
                                 </div>
 
                                 <!-- Password input -->
-                                <div class="form-outline mb-4">
+                                <div class="form-group mb-4">
+                                    <label for="form1Example2">Password</label>
                                     <input type="password" id="form1Example2" class="form-control" name="password" />
-                                    <label class="form-label" for="form1Example2">Password</label>
                                 </div>
 
                                 <?php if ($this->session->flashdata('auth')) : ?>
