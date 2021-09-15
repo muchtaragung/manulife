@@ -10,8 +10,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-sm-12 mx-auto">
-                <form action="<?= site_url('worksheet/save-worksheet') ?>">
+                <form action="<?= site_url('worksheet/save_worksheet') ?>" method="POST">
                     <div class="row">
+                        <div class="col-md-12">
+                            <label for="">Goals</label>
+                            <br>
+                            <textarea name="goal" id="" cols="30" rows="10" class="form-control"></textarea>
+                        </div>
                         <div class="col-md-6 col-sm-12 justify-content-center">
                             <h3>Competence</h3>
                             <div class="form-group">
@@ -65,6 +70,11 @@
                                     <label class="form-check-label">High</label>
                                 </div>
                             </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <button type="submit" class="btn btn-lg btn-primary">
+                                Submit
+                            </button>
                         </div>
                     </div>
                 </form>
