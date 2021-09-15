@@ -11,6 +11,8 @@ class Worksheet extends CI_Controller
         $this->load->model('Motivation_model');
         $this->load->model('Level_model');
         $this->load->model('Style_model');
+        $this->load->model('Supporting_model');
+        $this->load->model('Directing_model');
     }
 
     /**
@@ -22,7 +24,7 @@ class Worksheet extends CI_Controller
     {
         $data['page_title'] = "Worksheet";
 
-        $this->load->view('worksheet');
+        $this->load->view('worksheet', $data);
     }
 
     /**
@@ -56,6 +58,47 @@ class Worksheet extends CI_Controller
         // menentukan level dan style dan menyimpannya
         $this->save_level($competence, $motivation, $goal_id);
         $this->save_style($competence, $motivation, $goal_id);
+
+        redirect('worksheet/behaviour/' . $goal_id);
+    }
+
+    /**
+     * menampilkan hasil dari worksheet dan form behaviour
+     *
+     * @param int $goal_id
+     * @return void
+     */
+    public function behaviour($goal_id)
+    {
+        $data['page_title'] = 'Worksheet Behaviour';
+
+        // mengambil data level dan style sesuai goal id
+        $where = ['goal_id' => $goal_id];
+        $data['level'] = $this->Level_model->get_where($where)->row();
+        $data['style'] = $this->Style_model->get_where($where)->row();
+        $data['goal_id'] = $goal_id;
+        $this->load->view('behaviour', $data);
+    }
+
+    /**
+     * menyimpan behaviour
+     *
+     * @return void
+     */
+    public function save_behaviour()
+    {
+        // mengambil data directing behaviour
+        $directing['behaviour'] = json_encode($this->input->post('directing'));
+        $directing['goal_id']   = $this->input->post('goal_id');
+
+        // mengambil data supporting behaviour
+        $supporting['behaviour'] = json_encode($this->input->post('supporting'));
+        $supporting['goal_id']   = $this->input->post('goal_id');
+
+
+        // menyimpan behaviour
+        $this->Supporting_model->save($supporting);
+        $this->Directing_model->save($directing);
     }
 
     /**

@@ -13,4 +13,15 @@ class Style_model extends CI_Model
     {
         $this->db->insert('leadership_style', $object);
     }
+
+    /**
+     * mengambil data leadership style dengan kondisi where
+     *
+     * @param array $where array dari data yang mau di ambil
+     * @return void
+     */
+    public function get_where(array $where)
+    {
+        return $this->db->get_where('leadership_style', $where);
+    }
 }
