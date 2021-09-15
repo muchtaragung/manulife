@@ -36,7 +36,7 @@ class Worksheet extends CI_Controller
     {
         // mengambil lalu menyimpan data goal
         $goal['goal'] = $this->input->post('goal');
-        $this->save_goal($goal);
+        $this->Goal_model->save($goal);
 
         // mengambil data insert terakhir
         $goal_id = $this->db->insert_id();
@@ -46,14 +46,14 @@ class Worksheet extends CI_Controller
         $competence['skill']     = $this->input->post('skill');
         $competence['goal_id']   = $goal_id;
         // menyimpan data competence
-        $this->save_competence($competence);
+        $this->Competence_model->save($competence);
 
         // mengambil data untuk motivation
         $motivation['comitment']  = $this->input->post('comitment');
         $motivation['confidence'] = $this->input->post('confidence');
         $motivation['goal_id']   = $goal_id;
         // menyimpan data motivation
-        $this->save_motivation($motivation);
+        $this->Motivation_model->save($motivation);
 
         // menentukan level dan style dan menyimpannya
         $this->save_level($competence, $motivation, $goal_id);
@@ -99,39 +99,6 @@ class Worksheet extends CI_Controller
         // menyimpan behaviour
         $this->Supporting_model->save($supporting);
         $this->Directing_model->save($directing);
-    }
-
-    /**
-     * menyimpan goal
-     *
-     * @param array $goal
-     * @return void
-     */
-    private function save_goal(array $goal)
-    {
-        $this->Goal_model->save($goal);
-    }
-
-    /**
-     * menyimpan competence
-     *
-     * @param array $competence
-     * @return void
-     */
-    private function save_competence(array $competence)
-    {
-        $this->Competence_model->save($competence);
-    }
-
-    /**
-     * menyimpan motivation
-     *
-     * @param array $motivation
-     * @return void
-     */
-    private function save_motivation(array $motivation)
-    {
-        $this->Motivation_model->save($motivation);
     }
 
     /**
