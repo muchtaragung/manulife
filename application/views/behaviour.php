@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-12">
-                            <h3>Supporting[] Behaviour</h3>
+                            <h3>Supporting Behaviour</h3>
                             <br>
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="Mendengarkan dengan perhatian" id="flexCheckDefault" name="supporting[]">

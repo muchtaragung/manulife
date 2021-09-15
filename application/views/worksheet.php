@@ -20,18 +20,6 @@
                         <div class="col-md-6 col-sm-12 justify-content-center">
                             <h3>Competence</h3>
                             <div class="form-group">
-                                <label for="">Knowledge</label>
-                                <br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name='knowledge' type="radio" value="low">
-                                    <label class="form-check-label">Low</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name='knowledge' type="radio" value="high">
-                                    <label class="form-check-label">High</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
                                 <label for="">Skill</label>
                                 <br>
                                 <div class="form-check form-check-inline">
@@ -40,6 +28,18 @@
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" name='skill' type="radio" value="high">
+                                    <label class="form-check-label">High</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="">Knowledge</label>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" name='knowledge' type="radio" value="low">
+                                    <label class="form-check-label">Low</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" name='knowledge' type="radio" value="high">
                                     <label class="form-check-label">High</label>
                                 </div>
                             </div>

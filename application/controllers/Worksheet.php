@@ -144,81 +144,45 @@ class Worksheet extends CI_Controller
      */
     private function save_level(array $competence, array $motivation, $goal_id)
     {
-        if ($competence['skill'] == 'low') {
-            if ($competence['knowledge'] == 'low') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L0   ';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L2/1';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L1/2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L1';
-                    }
-                }
-            }
-            if ($competence['knowledge'] == 'high') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L2';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L1/2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L1';
-                    }
-                }
-            }
-        }
-        if ($competence['skill'] == 'high') {
-            if ($competence['knowledge'] == 'low') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L2/3';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L2/3';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L3/2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L3/2';
-                    }
-                }
-            }
-            if ($competence['knowledge'] == 'high') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L3';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L3/4';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $level['level'] = 'L4/3';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $level['level'] = 'L4';
-                    }
-                }
-            }
+        $skill      = $competence['skill'];
+        $knowledge  = $competence['knowledge'];
+        $comitment  = $motivation['comitment'];
+        $confidence = $motivation['confidence'];
+
+        if ($skill == 'low' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'low') {
+            $level['level'] = 'L0';
+        } else if ($skill == 'low' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'high') {
+            $level['level'] = 'L2/1';
+        } else if ($skill == 'low' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'low') {
+            $level['level'] = 'L1/2';
+        } else if ($skill == 'low' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'high') {
+            $level['level'] = 'L1';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'low') {
+            $level['level'] = 'L2';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'high') {
+            $level['level'] = 'L2';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'low') {
+            $level['level'] = 'L1/2';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'high') {
+            $level['level'] = 'L1';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'low') {
+            $level['level'] = 'L2/3';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'high') {
+            $level['level'] = 'L2/3';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'low') {
+            $level['level'] = 'L3/2';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'high') {
+            $level['level'] = 'L3';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'low') {
+            $level['level'] = 'L3';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'high') {
+            $level['level'] = 'L3/4';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'low') {
+            $level['Level'] = 'L4/3';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'high') {
+            $level['level'] = 'L4';
+        } else {
+            $level['level'] = 'ERROR';
         }
 
         $level['goal_id'] = $goal_id;
@@ -235,81 +199,45 @@ class Worksheet extends CI_Controller
      */
     private function save_style(array $competence, array $motivation, $goal_id)
     {
-        if ($competence['skill'] == 'low') {
-            if ($competence['knowledge'] == 'low') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S0   ';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S2/1';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S1/2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S1';
-                    }
-                }
-            }
-            if ($competence['knowledge'] == 'high') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S2';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S1/2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S1';
-                    }
-                }
-            }
-        }
-        if ($competence['skill'] == 'high') {
-            if ($competence['knowledge'] == 'low') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S2/3';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S2/3';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S3/2';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S3/2';
-                    }
-                }
-            }
-            if ($competence['knowledge'] == 'high') {
-                if ($motivation['comitment'] == 'low') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S3';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S3/4';
-                    }
-                }
-                if ($motivation['comitment'] == 'high') {
-                    if ($motivation['confidence'] == 'low') {
-                        $style['style'] = 'S4/3';
-                    }
-                    if ($motivation['confidence'] == 'high') {
-                        $style['style'] = 'S4';
-                    }
-                }
-            }
+        $skill      = $competence['skill'];
+        $knowledge  = $competence['knowledge'];
+        $comitment  = $motivation['comitment'];
+        $confidence = $motivation['confidence'];
+
+        if ($skill == 'low' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'low') {
+            $style['style'] = 'S0';
+        } else if ($skill == 'low' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'high') {
+            $style['style'] = 'S2/1';
+        } else if ($skill == 'low' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'low') {
+            $style['style'] = 'S1/2';
+        } else if ($skill == 'low' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'high') {
+            $style['style'] = 'S1';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'low') {
+            $style['style'] = 'S2';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'high') {
+            $style['style'] = 'S2';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'low') {
+            $style['style'] = 'S1/2';
+        } else if ($skill == 'low' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'high') {
+            $style['style'] = 'S1';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'low') {
+            $style['style'] = 'S2/3';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'low' && $confidence == 'high') {
+            $style['style'] = 'S2/3';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'low') {
+            $style['style'] = 'S3/2';
+        } else if ($skill == 'high' && $knowledge == 'low' && $comitment == 'high' && $confidence == 'high') {
+            $style['style'] = 'S3';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'low') {
+            $style['style'] = 'S3';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'low' && $confidence == 'high') {
+            $style['style'] = 'S3/4';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'low') {
+            $style['style'] = 'S4/3';
+        } else if ($skill == 'high' && $knowledge == 'high' && $comitment == 'high' && $confidence == 'high') {
+            $style['style'] = 'S4';
+        } else {
+            $level['level'] = 'ERROR';
         }
 
         $style['goal_id'] = $goal_id;
