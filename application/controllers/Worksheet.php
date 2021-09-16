@@ -20,7 +20,7 @@ class Worksheet extends CI_Controller
      *
      * @return void
      */
-    public function worksheet()
+    public function index()
     {
         $data['page_title'] = "Worksheet";
 
