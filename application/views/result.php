@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-sm-11 mx-auto">
-                <div class="card my-5 text-center">
+                <div class="card my-5 text-center shadow-5-strong">
                     <div class="card-body">
                         <h1 class="card-title">Result</h1>
                         <br>

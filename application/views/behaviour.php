@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-sm-12 mx-auto">
-                <div class="card my-5 text-center">
+                <div class="card my-5 text-center shadow-5-strong">
                     <form action="<?= site_url('worksheet/save_behaviour') ?>" method="POST">
                         <input type="hidden" name="goal_id" value="<?= $goal_id ?>">
                         <div class="card-body">
