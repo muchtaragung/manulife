@@ -99,6 +99,26 @@ class Worksheet extends CI_Controller
         // menyimpan behaviour
         $this->Supporting_model->save($supporting);
         $this->Directing_model->save($directing);
+        redirect('worksheet/result/' . $this->input->post('goal_id'));
+    }
+
+    public function result($goal_id)
+    {
+        $where = ['goal_id' => $goal_id];
+
+        $directing = $this->Directing_model->get_where($where)->row();
+        $supporting = $this->Supporting_model->get_where($where)->row();
+
+        $data['goal']       = $this->Goal_model->get_where(['id' => $goal_id])->row();
+        $data['competence'] = $this->Competence_model->get_where($where)->row();
+        $data['motivation'] = $this->Motivation_model->get_where($where)->row();
+        $data['learning_level'] = $this->Level_model->get_where($where)->row();
+        $data['leadership_style'] = $this->Style_model->get_where($where)->row();
+        $data['directing'] = json_decode($directing->behaviour);
+        $data['supporting'] = json_decode($supporting->behaviour);
+
+        // var_dump($data);
+        $this->load->view('result', $data);
     }
 
     /**
