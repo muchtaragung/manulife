@@ -106,6 +106,8 @@ class Worksheet extends CI_Controller
 
     public function result($goal_id)
     {
+        $data['page_title'] = 'Worksheet Result';
+
         $where = ['goal_id' => $goal_id];
 
         $directing = $this->Directing_model->get_where($where)->row();
