@@ -84,17 +84,25 @@
                             <div class="col">
                                 <h3>Directing Behaviour</h3>
                                 <ul class="list-group">
-                                    <?php foreach ($directing as $direct) : ?>
-                                        <li class="list-group-item"><?= $direct ?></li>
-                                    <?php endforeach ?>
+                                    <?php if ($directing != null) : ?>
+                                        <?php foreach ($directing as $direct) : ?>
+                                            <li class="list-group-item"><?= $direct ?></li>
+                                        <?php endforeach ?>
+                                    <?php else : ?>
+                                        <li class="list-group-item">Tidak ada behaviour yang di pilih</li>
+                                    <?php endif ?>
                                 </ul>
                             </div>
                             <div class="col">
                                 <h3>Supporting Behaviour</h3>
                                 <ul class="list-group">
-                                    <?php foreach ($supporting as $support) : ?>
-                                        <li class="list-group-item"><?= $support ?></li>
-                                    <?php endforeach ?>
+                                    <?php if ($supporting != null) : ?>
+                                        <?php foreach ($supporting as $support) : ?>
+                                            <li class="list-group-item"><?= $support ?></li>
+                                        <?php endforeach ?>
+                                    <?php else : ?>
+                                        <li class="list-group-item">Tidak ada behaviour yang di pilih</li>
+                                    <?php endif ?>
                                 </ul>
                             </div>
                         </div>

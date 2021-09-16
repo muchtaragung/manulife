@@ -6,6 +6,8 @@ class Worksheet extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+
+        // loading model
         $this->load->model('Goal_model');
         $this->load->model('Competence_model');
         $this->load->model('Motivation_model');
