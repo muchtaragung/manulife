@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Level_model extends CI_Model
 {
+    private $table = 'learning_level';
     /**
      * menyimpan data ke tabel
      *
@@ -11,7 +12,7 @@ class Level_model extends CI_Model
      */
     public function save(array $object)
     {
-        $this->db->insert('learning_level', $object);
+        $this->db->insert($this->table, $object);
     }
 
     /**
@@ -22,6 +23,6 @@ class Level_model extends CI_Model
      */
     public function get_where(array $where)
     {
-        return $this->db->get_where('learning_level', $where);
+        return $this->db->get_where($this->table, $where);
     }
 }

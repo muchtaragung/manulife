@@ -3,6 +3,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Directing_model extends CI_Model
 {
+    private $table = 'directing_behaviour';
     /**
      * menyimpan data ke tabel
      *
@@ -11,6 +12,17 @@ class Directing_model extends CI_Model
      */
     public function save(array $object)
     {
-        $this->db->insert('directing_behaviour', $object);
+        $this->db->insert($this->table, $object);
+    }
+
+    /**
+     * mengambil data learning level dengan kondisi where
+     *
+     * @param array $where array dari data yang mau di ambil
+     * @return void
+     */
+    public function get_where(array $where)
+    {
+        return $this->db->get_where($this->table, $where);
     }
 }
