@@ -17,7 +17,7 @@
                                 <div class="col-md-12">
                                     <label for="">Goals</label>
                                     <br>
-                                    <textarea name="goal" id="" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="goal" id="" cols="30" rows="5" class="form-control" required></textarea>
                                 </div>
                                 <div class="col-md-6 col-sm-12 justify-content-center">
                                     <h3>Competence</h3>
@@ -25,11 +25,11 @@
                                         <label for="">Skill</label>
                                         <br>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name='skill' type="radio" value="low">
+                                            <input class="form-check-input" name='skill' type="radio" value="low" required>
                                             <label class="form-check-label">Low</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name='skill' type="radio" value="high">
+                                            <input class="form-check-input" name='skill' type="radio" value="high" required>
                                             <label class="form-check-label">High</label>
                                         </div>
                                     </div>
@@ -37,11 +37,11 @@
                                         <label for="">Knowledge</label>
                                         <br>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name='knowledge' type="radio" value="low">
+                                            <input class="form-check-input" name='knowledge' type="radio" value="low" required>
                                             <label class="form-check-label">Low</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name='knowledge' type="radio" value="high">
+                                            <input class="form-check-input" name='knowledge' type="radio" value="high" required>
                                             <label class="form-check-label">High</label>
                                         </div>
                                     </div>
@@ -52,11 +52,11 @@
                                         <label for="">Comitment</label>
                                         <br>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name="comitment" type="radio" value="low">
+                                            <input class="form-check-input" name="comitment" type="radio" value="low" required>
                                             <label class="form-check-label">Low</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name="comitment" type="radio" value="high">
+                                            <input class="form-check-input" name="comitment" type="radio" value="high" required>
                                             <label class="form-check-label">High</label>
                                         </div>
                                     </div>
@@ -64,11 +64,11 @@
                                         <label for="">Confidence</label>
                                         <br>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name="confidence" type="radio" value="low">
+                                            <input class="form-check-input" name="confidence" type="radio" value="low" required>
                                             <label class="form-check-label">Low</label>
                                         </div>
                                         <div class="form-check form-check-inline">
-                                            <input class="form-check-input" name="confidence" type="radio" value="high">
+                                            <input class="form-check-input" name="confidence" type="radio" value="high" required>
                                             <label class="form-check-label">High</label>
                                         </div>
                                     </div>
