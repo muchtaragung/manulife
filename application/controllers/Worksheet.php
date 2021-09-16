@@ -87,6 +87,8 @@ class Worksheet extends CI_Controller
      */
     public function save_behaviour()
     {
+        $data['page_title'] = "Behaviour";
+
         // mengambil data directing behaviour
         $directing['behaviour'] = json_encode($this->input->post('directing'));
         $directing['goal_id']   = $this->input->post('goal_id');
