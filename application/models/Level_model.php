@@ -16,7 +16,7 @@ class Level_model extends CI_Model
     }
 
     /**
-     * mengambil data learning level dengan kondisi where
+     * mengambil data tabel dengan kondisi where
      *
      * @param array $where array dari data yang mau di ambil
      * @return void
