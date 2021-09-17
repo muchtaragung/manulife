@@ -64,7 +64,7 @@
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" name="direction" value="Monitor Performance" type="checkbox" value="" id="flexCheckChecked">
+                                        <input class="form-check-input" name="directing[]" value="Monitor Performance" type="checkbox" value="" id="flexCheckChecked">
                                         <label class="form-check-label" for="flexCheckChecked">
                                             Monitor Performance
                                         </label>
