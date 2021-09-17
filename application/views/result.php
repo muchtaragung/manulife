@@ -245,7 +245,7 @@
                         <!-- End Behaviour Section -->
 
                         <br>
-                        <a href="<?= site_url('worksheet') ?>" class="btn btn-lg btn-primary">Back</a>
+                        <a href="<?= site_url('goals/' . $peserta->id) ?>" class="btn btn-lg btn-primary">Back</a>
                         <button onclick="window.print();" class="btn btn-lg brn-danger">Print</button>
                     </div>
                 </div>
