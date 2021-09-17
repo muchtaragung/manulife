@@ -15,6 +15,9 @@
                         <div class="row">
                             <div class="col-md-12 mx-1">
                                 <!-- Button trigger modal -->
+                                <a class="btn btn-primary float-right" href="<?= site_url('peserta/') ?>">
+                                    Back
+                                </a>
                                 <a class="btn btn-primary float-right" href="<?= site_url('worksheet/' . $peserta_id) ?>">
                                     Tambah Goal
                                 </a>
