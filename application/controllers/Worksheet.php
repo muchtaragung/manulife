@@ -78,8 +78,6 @@ class Worksheet extends CI_Controller
         $data['motivation'] = $this->Motivation_model->get_where($where)->row();
         $data['learning_level'] = $this->Level_model->get_where($where)->row();
         $data['leadership_style'] = $this->Style_model->get_where($where)->row();
-        $data['directing'] = json_decode($directing->behaviour);
-        $data['supporting'] = json_decode($supporting->behaviour);
 
         // var_dump($data);
         $this->load->view('result', $data);
