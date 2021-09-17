@@ -17,6 +17,21 @@
                         <!-- Goal Section -->
                         <div class="row">
                             <div class="col">
+                                <h3 class="card-title">Peserta</h3>
+                                <table class="table">
+                                    <tr>
+                                        <td>Nama</td>
+                                        <td>:</td>
+                                        <td><?= $peserta->nama ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>:</td>
+                                        <td><?= $peserta->email ?></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="col">
                                 <h3 class="card-title">Goals</h3>
                                 <p class="card-text">
                                     <?= $goal->goal ?>

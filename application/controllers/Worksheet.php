@@ -80,7 +80,7 @@ class Worksheet extends CI_Controller
         $data['motivation'] = $this->Motivation_model->get_where($where)->row();
         $data['learning_level'] = $this->Level_model->get_where($where)->row();
         $data['leadership_style'] = $this->Style_model->get_where($where)->row();
-        $data['peserta']    = $this->Peserta_model->get_where(['id' => $data['goal']->peserta_id]);
+        $data['peserta']    = $this->Peserta_model->get_where(['id' => $data['goal']->peserta_id])->row();
 
         // var_dump($data);
         $this->load->view('result', $data);
