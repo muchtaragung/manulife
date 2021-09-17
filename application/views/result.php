@@ -173,8 +173,65 @@
                         <br>
                         <hr>
 
+                        <!-- Behaviour Section -->
+                        <h3>Behaviour</h3>
+                        <div class="row">
+                            <?php if ($learning_level->level == 'L1' | $learning_level->level == 'L1/2' | $learning_level->level == 'L2/1' | $learning_level->level == 'L2') : ?>
+                                <div class="col-md-6 col-sm-12 mx-auto">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Set Smart Goal</li>
+                                        <li class="list-group-item">Contohkan Dan Peragakan</li>
+                                        <li class="list-group-item">Berikan Step Stepnya</li>
+                                        <li class="list-group-item">Mengidentifikasi Proses</li>
+                                        <li class="list-group-item">Klasifikasikan Tugas</li>
+                                        <li class="list-group-item">Develop Action Plans</li>
+                                        <li class="list-group-item">Monitor Performance</li>
+                                    </ul>
+                                </div>
+                            <?php elseif ($learning_level->level == 'L2/3' | $learning_level->level == 'L3/2') : ?>
+                                <div class="col-md-6 col-sm-12 mx-auto">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Set Smart Goal</li>
+                                        <li class="list-group-item">Contohkan Dan Peragakan</li>
+                                        <li class="list-group-item">Berikan Step Stepnya</li>
+                                        <li class="list-group-item">Mengidentifikasi Proses</li>
+                                        <li class="list-group-item">Klasifikasikan Tugas</li>
+                                        <li class="list-group-item">Develop Action Plans</li>
+                                        <li class="list-group-item">Monitor Performance</li>
+                                    </ul>
+                                </div>
 
+                                <div class="col-md-6 col-sm-12 mx-auto">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Mendengarkan Dengan Perhatian</li>
+                                        <li class="list-group-item">Facilitate Problem Solving</li>
+                                        <li class="list-group-item">Minta Masukan</li>
+                                        <li class="list-group-item">Mencari Why</li>
+                                        <li class="list-group-item">Acknowledge and encourage</li>
+                                        <li class="list-group-item">Menceritakan Pengalaman Perusahaan</li>
+                                        <li class="list-group-item">Menceritakan Pengalaman Pribadi</li>
+                                    </ul>
+                                </div>
+                            <?php elseif ($learning_level->level == 'L3' | $learning_level->level == 'L3/4' | $learning_level->level == 'L4/3' | $learning_level->level == 'L4') : ?>
+                                <div class="col-md-6 col-sm-12 mx-auto">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">Mendengarkan Dengan Perhatian</li>
+                                        <li class="list-group-item">Facilitate Problem Solving</li>
+                                        <li class="list-group-item">Minta Masukan</li>
+                                        <li class="list-group-item">Mencari Why</li>
+                                        <li class="list-group-item">Acknowledge and encourage</li>
+                                        <li class="list-group-item">Menceritakan Pengalaman Perusahaan</li>
+                                        <li class="list-group-item">Menceritakan Pengalaman Pribadi</li>
+                                    </ul>
+                                </div>
+                            <?php endif ?>
+
+                        </div>
+                        <!-- End Behaviour Section -->
+
+                        <br>
                         <a href="<?= site_url('worksheet') ?>" class="btn btn-lg btn-primary">Back</a>
+                        <button onclick="window.print();" class="btn btn-lg brn-danger">Print</button>
                     </div>
                 </div>
             </div>
