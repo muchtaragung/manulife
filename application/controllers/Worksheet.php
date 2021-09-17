@@ -15,6 +15,7 @@ class Worksheet extends CI_Controller
         $this->load->model('Style_model');
         $this->load->model('Supporting_model');
         $this->load->model('Directing_model');
+        $this->load->model('Peserta_model');
     }
 
     /**
@@ -22,10 +23,10 @@ class Worksheet extends CI_Controller
      *
      * @return void
      */
-    public function index()
+    public function worksheet($peserta_id)
     {
         $data['page_title'] = "Worksheet";
-
+        $data['peserta_id'] = $peserta_id;
         $this->load->view('worksheet', $data);
     }
 
@@ -38,6 +39,7 @@ class Worksheet extends CI_Controller
     {
         // mengambil lalu menyimpan data goal
         $goal['goal'] = $this->input->post('goal');
+        $goal['peserta_id'] = $this->input->post('peserta_id');
         $this->Goal_model->save($goal);
 
         // mengambil data insert terakhir
@@ -78,6 +80,7 @@ class Worksheet extends CI_Controller
         $data['motivation'] = $this->Motivation_model->get_where($where)->row();
         $data['learning_level'] = $this->Level_model->get_where($where)->row();
         $data['leadership_style'] = $this->Style_model->get_where($where)->row();
+        $data['peserta']    = $this->Peserta_model->get_where(['id' => $data['goal']->peserta_id]);
 
         // var_dump($data);
         $this->load->view('result', $data);

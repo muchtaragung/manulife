@@ -12,6 +12,7 @@
             <div class="col-md-10 col-sm-12 mx-auto">
                 <div class="card my-5 text-center shadow-5-strong">
                     <form action="<?= site_url('worksheet/save_worksheet') ?>" method="POST">
+                        <input type="hidden" name="peserta_id" value="<?= $peserta_id ?>">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-12">
