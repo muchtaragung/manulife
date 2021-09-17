@@ -66,12 +66,106 @@
                         <div class="row">
                             <div class="col">
                                 <h3>Learning Level</h3>
-                                <br>
-                                <h1><?= $learning_level->level ?></h1>
+                                <h1>
+                                    <?= $learning_level->level ?>
+                                    <br>
+                                    <?php switch ($learning_level->level) {
+                                        case "L2/1":
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge" style="background-color:#FF6D00">Drilling</span>';
+                                            break;
+                                        case "L1/2":
+                                            echo '<span class="badge "style="background-color:#FF6D00">Drilling</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            break;
+                                        case "L1":
+                                            echo '<span class="badge" style="background-color:#FF6D00">Drilling</span>';
+                                            break;
+                                        case "L2":
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            break;
+                                        case "L2/3":
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            break;
+                                        case "L3/2":
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            break;
+                                        case "L3":
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            break;
+                                        case "L3/4":
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-info">Assigning</span>';
+                                            break;
+                                        case "L4/3":
+                                            echo '<span class="badge bg-info">Assigning</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            break;
+                                        case "L4":
+                                            echo '<span class="badge bg-info">Assigning</span>';
+                                            break;
+                                    } ?>
+                                </h1>
+
                             </div>
                             <div class="col">
                                 <h3>Leadership Style</h3>
-                                <h1><?= $leadership_style->style ?></h1>
+                                <h1>
+                                    <?= $leadership_style->style ?>
+                                    <br>
+                                    <?php switch ($leadership_style->style) {
+                                        case "S2/1":
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge" style="background-color:#FF6D00">Drilling</span>';
+                                            break;
+                                        case "S1/2":
+                                            echo '<span class="badge "style="background-color:#FF6D00">Drilling</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            break;
+                                        case "S1":
+                                            echo '<span class="badge" style="background-color:#FF6D00">Drilling</span>';
+                                            break;
+                                        case "S2":
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            break;
+                                        case "S2/3":
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            break;
+                                        case "S3/2":
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-warning">Mentoring</span>';
+                                            break;
+                                        case "S3":
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            break;
+                                        case "S3/4":
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-info">Assigning</span>';
+                                            break;
+                                        case "S4/3":
+                                            echo '<span class="badge bg-info">Assigning</span>';
+                                            echo "<br>";
+                                            echo '<span class="badge bg-success">Coaching</span>';
+                                            break;
+                                        case "S4":
+                                            echo '<span class="badge bg-info">Assigning</span>';
+                                            break;
+                                    } ?>
+                                </h1>
                             </div>
                         </div>
                         <!-- End Learning Level & Leadership Style Section -->
@@ -79,36 +173,6 @@
                         <br>
                         <hr>
 
-                        <!-- Behaviour Section -->
-                        <div class="row">
-                            <div class="col">
-                                <h3>Directing Behaviour</h3>
-                                <ul class="list-group">
-                                    <?php if ($directing != null) : ?>
-                                        <?php foreach ($directing as $direct) : ?>
-                                            <li class="list-group-item"><?= $direct ?></li>
-                                        <?php endforeach ?>
-                                    <?php else : ?>
-                                        <li class="list-group-item">Tidak ada behaviour yang di pilih</li>
-                                    <?php endif ?>
-                                </ul>
-                            </div>
-                            <div class="col">
-                                <h3>Supporting Behaviour</h3>
-                                <ul class="list-group">
-                                    <?php if ($supporting != null) : ?>
-                                        <?php foreach ($supporting as $support) : ?>
-                                            <li class="list-group-item"><?= $support ?></li>
-                                        <?php endforeach ?>
-                                    <?php else : ?>
-                                        <li class="list-group-item">Tidak ada behaviour yang di pilih</li>
-                                    <?php endif ?>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- End Behaviour Section -->
-
-                        <br><br>
 
                         <a href="<?= site_url('worksheet') ?>" class="btn btn-lg btn-primary">Back</a>
                     </div>
