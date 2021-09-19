@@ -11,6 +11,8 @@ class Worksheet extends CI_Controller
         $this->load->model('Goal_model');
         $this->load->model('Competence_model');
         $this->load->model('Motivation_model');
+        $this->load->model('Level_model');
+        $this->load->model('Style_model');
         $this->load->model('Supporting_model');
         $this->load->model('Directing_model');
         $this->load->model('Peserta_model');
