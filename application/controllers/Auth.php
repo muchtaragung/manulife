@@ -8,6 +8,10 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_model');
+
+        if ($this->session->userdata('login') == 'true') {
+            redirect('');
+        }
     }
 
     /**
