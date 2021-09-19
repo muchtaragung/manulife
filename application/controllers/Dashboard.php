@@ -25,8 +25,10 @@ class Dashboard extends CI_Controller
 
     public function list_peserta()
     {
+        $where = array('user_id' => $this->session->userdata('id'));
+
         $data['page_title'] = 'List Peserta';
-        $data['peserta'] = $this->Peserta_model->get()->result();
+        $data['peserta'] = $this->Peserta_model->get_where($where)->result();
 
         $this->load->view('list_peserta', $data);
     }
