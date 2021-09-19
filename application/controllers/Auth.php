@@ -44,7 +44,7 @@ class Auth extends CI_Controller
 
                 // set data user yang akan di masukan ke session
                 $session_data = array(
-                    'status'    => true,
+                    'login'    => true,
                     'id'       => $data_user->id,
                     'name'     => $data_user->name,
                     'email'    => $data_user->email,
@@ -52,7 +52,7 @@ class Auth extends CI_Controller
                 );
 
                 $this->session->set_userdata($session_data);
-                redirect('worksheet/goal', 'refresh');
+                redirect('', 'refresh');
             } else {
                 $this->session->set_flashdata('auth', 'Password Salah');
                 redirect('login', 'refresh');
