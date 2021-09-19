@@ -66,6 +66,12 @@ class Worksheet extends CI_Controller
         redirect('worksheet/result/' . $goal_id);
     }
 
+    /**
+     * menampilkan hasil
+     *
+     * @param [type] $goal_id
+     * @return void
+     */
     public function result($goal_id)
     {
         $data['page_title'] = 'Worksheet Result';
