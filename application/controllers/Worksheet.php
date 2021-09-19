@@ -81,9 +81,6 @@ class Worksheet extends CI_Controller
 
         $where = ['goal_id' => $goal_id];
 
-        $directing = $this->Directing_model->get_where($where)->row();
-        $supporting = $this->Supporting_model->get_where($where)->row();
-
         $data['goal']       = $this->Goal_model->get_where(['id' => $goal_id])->row();
         $data['competence'] = $this->Competence_model->get_where($where)->row();
         $data['motivation'] = $this->Motivation_model->get_where($where)->row();
