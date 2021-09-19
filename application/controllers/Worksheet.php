@@ -16,6 +16,11 @@ class Worksheet extends CI_Controller
         $this->load->model('Supporting_model');
         $this->load->model('Directing_model');
         $this->load->model('Peserta_model');
+
+        if ($this->session->userdata('login') != 'true') {
+            $this->session->set_flashdata('auth', 'Login Sebelum Mengisi Worksheet');
+            redirect('login');
+        }
     }
 
     /**

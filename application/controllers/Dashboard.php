@@ -16,6 +16,11 @@ class Dashboard extends CI_Controller
         $this->load->model('Supporting_model');
         $this->load->model('Directing_model');
         $this->load->model('Peserta_model');
+
+        if ($this->session->userdata('login') != 'true') {
+            $this->session->set_flashdata('auth', 'Silahkan Login Dahulu');
+            redirect('login');
+        }
     }
 
     public function list_peserta()
@@ -28,8 +33,9 @@ class Dashboard extends CI_Controller
 
     public function save_peserta()
     {
-        $peserta['nama']  = $this->input->post('nama');
-        $peserta['email'] = $this->input->post('email');
+        $peserta['nama']    = $this->input->post('nama');
+        $peserta['email']   = $this->input->post('email');
+        $peserta['user_id'] = $this->session->userdata('id');
 
         $this->session->set_flashdata('peserta', 'Berhasil Menambahkan Peserta');
         $this->Peserta_model->save($peserta);
