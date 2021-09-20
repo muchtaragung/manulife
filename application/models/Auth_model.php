@@ -12,4 +12,9 @@ class Auth_model extends CI_Model
     {
         return $this->db->where($where)->get('admin');
     }
+
+    public function get_manajer($where)
+    {
+        return $this->db->where($where)->get('manajer');
+    }
 }

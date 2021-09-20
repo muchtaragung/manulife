@@ -15,11 +15,11 @@ class Auth extends CI_Controller
      *
      * @return void
      */
-    public function user_login()
+    public function login()
     {
         $data['page_title'] = 'Login';
 
-        $this->load->view('login/user', $data);
+        $this->load->view('login', $data);
     }
 
     /**
@@ -27,28 +27,28 @@ class Auth extends CI_Controller
      *
      * @return void
      */
-    public function user_auth()
+    public function auth()
     {
         // mengambil data hasil inputan user
         $email    = $this->input->post('email');
         $password = $this->input->post('password');
 
-        // mengecek apakah akun user ada?
-        $user =  $this->Auth_model->get_user(['email' => $email])->num_rows();
+        // mengecek apakah akun manajer ada?
+        $manajer =  $this->Auth_model->get_manajer(['email_manajer' => $email])->num_rows();
 
-        if ($user > 0) {
-            $data_user = $this->Auth_model->get_user(['email' => $email])->row();
+        if ($manajer > 0) {
+            $data_manajer = $this->Auth_model->get_manajer(['email_manajer' => $email])->row();
 
             // mengecek apakah password benar
-            if (password_verify($password, $data_user->password)) {
+            if (password_verify($password, $data_manajer->password_manajer)) {
 
-                // set data user yang akan di masukan ke session
+                // set data manajer yang akan di masukan ke session
                 $session_data = array(
                     'login'    => true,
-                    'id'       => $data_user->id,
-                    'name'     => $data_user->name,
-                    'email'    => $data_user->email,
-                    'password' => $data_user->password,
+                    'id'       => $data_manajer->id,
+                    'name'     => $data_manajer->nama_manajer,
+                    'email'    => $data_manajer->email_manajer,
+                    'password' => $data_manajer->password,
                 );
 
                 $this->session->set_userdata($session_data);

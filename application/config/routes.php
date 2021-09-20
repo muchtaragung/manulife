@@ -53,8 +53,8 @@ $route['default_controller'] = 'Welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
-$route['login'] = 'auth/user_login';
-$route['auth'] = 'auth/user_auth';
+$route['login'] = 'auth/login';
+$route['auth'] = 'auth/auth';
 
 $route['peserta'] = 'Dashboard/list_peserta';
 $route['peserta/save'] = 'Dashboard/save_peserta';
