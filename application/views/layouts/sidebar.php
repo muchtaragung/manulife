@@ -11,24 +11,46 @@
             </div>
         </div>
         <div class="sidebar-menu">
-            <ul class="menu">
-                <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item  ">
-                    <a href="<?= site_url('peserta') ?>" class='sidebar-link'>
-                        <i class="bi bi-table"></i>
-                        <span>List Peserta</span>
-                    </a>
-                </li>
+            <?php if ($this->session->userdata('login') == 'admin') : ?>
+                <ul class="menu">
+                    <li class="sidebar-title">Menu</li>
 
-                <li class="sidebar-item  ">
-                    <a href="<?= site_url('auth/logout') ?>" class='sidebar-link'>
-                        <i class="bi bi-door-closed"></i>
-                        <span>Logout</span>
-                    </a>
-                </li>
+                    <li class="sidebar-item  ">
+                        <a href="<?= site_url('admin/list/manajer') ?>" class='sidebar-link'>
+                            <i class="bi bi-table"></i>
+                            <span>List Manajer</span>
+                        </a>
+                    </li>
 
-            </ul>
+                    <li class="sidebar-item  ">
+                        <a href="<?= site_url('auth/logout') ?>" class='sidebar-link'>
+                            <i class="bi bi-door-closed"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+            <?php else : ?>
+                <ul class="menu">
+                    <li class="sidebar-title">Menu</li>
+
+                    <li class="sidebar-item  ">
+                        <a href="<?= site_url('peserta') ?>" class='sidebar-link'>
+                            <i class="bi bi-table"></i>
+                            <span>List Peserta</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  ">
+                        <a href="<?= site_url('auth/logout') ?>" class='sidebar-link'>
+                            <i class="bi bi-door-closed"></i>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+
+                </ul>
+            <?php endif ?>
         </div>
         <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
     </div>
