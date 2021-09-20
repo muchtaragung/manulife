@@ -7,4 +7,9 @@ class Auth_model extends CI_Model
     {
         return $this->db->where($where)->get('user');
     }
+
+    public function get_admin($where)
+    {
+        return $this->db->where($where)->get('admin');
+    }
 }

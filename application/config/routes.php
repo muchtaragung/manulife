@@ -62,3 +62,6 @@ $route['goals/(:num)'] = 'Dashboard/list_goal/$1';
 
 $route['worksheet/(:num)'] = 'Worksheet/worksheet/$1';
 $route['result/(:num)'] = 'Worksheet/result/$1';
+
+$route['admin/login'] = 'auth/admin_login';
+$route['admin/auth'] = 'auth/admin_auth';
