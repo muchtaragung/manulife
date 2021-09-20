@@ -30,7 +30,7 @@
                         <div class="card-header d-flex justify-content-between">
                             <h3 class="card-title float-left">Tabel Peserta</h3>
 
-                            <a href="<?= site_url('worksheet/' . $peserta_id) ?>?>" class="btn btn-success float-right">
+                            <a href="<?= site_url('worksheet/' . $peserta_id) ?>" class="btn btn-success float-right">
                                 Tambah Worksheet
                             </a>
                         </div>
