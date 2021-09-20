@@ -18,7 +18,7 @@ class Admin extends CI_Controller
 
         if ($this->session->userdata('login') != 'admin') {
             $this->session->set_flashdata('auth', 'Silahkan Login Dahulu');
-            redirect('login');
+            redirect('admin/login');
         }
     }
 
