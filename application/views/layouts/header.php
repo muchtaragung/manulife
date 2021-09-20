@@ -1,12 +1,13 @@
-<meta charset="utf-8" />
-<!-- <link rel="icon" type="image/png" href="<?= base_url() ?>assets/img/favicon.png"> -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>
     <?= $page_title ?>
 </title>
-<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-<!--     Fonts and icons     -->
-<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-<!-- CSS Files -->
-<link href="<?= base_url() ?>assets/css/mdb.min.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="<?= site_url('') ?>assets/css/bootstrap.css">
+<link rel="stylesheet" href="<?= site_url('') ?>assets/vendors/simple-datatables/style.css">
+<link rel="stylesheet" href="<?= site_url('') ?>assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" href="<?= site_url('') ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="<?= site_url('') ?>assets/css/app.css">
+<link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
