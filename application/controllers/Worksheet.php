@@ -15,7 +15,7 @@ class Worksheet extends CI_Controller
         $this->load->model('Style_model');
         $this->load->model('Peserta_model');
 
-        if ($this->session->userdata('login') != 'true') {
+        if ($this->session->userdata('login') != 'manajer') {
             $this->session->set_flashdata('auth', 'Login Sebelum Mengisi Worksheet');
             redirect('login');
         }

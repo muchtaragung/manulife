@@ -15,7 +15,7 @@ class Dashboard extends CI_Controller
         $this->load->model('Style_model');
         $this->load->model('Peserta_model');
 
-        if ($this->session->userdata('login') != 'true') {
+        if ($this->session->userdata('login') != 'manajer') {
             $this->session->set_flashdata('auth', 'Silahkan Login Dahulu');
             redirect('login');
         }
@@ -23,7 +23,7 @@ class Dashboard extends CI_Controller
 
     public function list_peserta()
     {
-        $where = array('user_id' => $this->session->userdata('id'));
+        $where = array('manajer_id' => $this->session->userdata('id'));
 
         $data['page_title'] = 'List Peserta';
         $data['peserta'] = $this->Peserta_model->get_where($where)->result();
@@ -35,7 +35,7 @@ class Dashboard extends CI_Controller
     {
         $peserta['nama']    = $this->input->post('nama');
         $peserta['email']   = $this->input->post('email');
-        $peserta['user_id'] = $this->session->userdata('id');
+        $peserta['manajer_id'] = $this->session->userdata('id');
 
         $this->session->set_flashdata('peserta', 'Berhasil Menambahkan Peserta');
         $this->Peserta_model->save($peserta);

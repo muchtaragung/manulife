@@ -31,7 +31,7 @@
                     </li>
 
                 </ul>
-            <?php else : ?>
+            <?php elseif ($this->session->userdata('login') == 'manajer') : ?>
                 <ul class="menu">
                     <li class="sidebar-title">Menu</li>
 

@@ -44,11 +44,11 @@ class Auth extends CI_Controller
 
                 // set data manajer yang akan di masukan ke session
                 $session_data = array(
-                    'login'    => true,
+                    'login'    => 'manajer',
                     'id'       => $data_manajer->id,
                     'name'     => $data_manajer->nama_manajer,
                     'email'    => $data_manajer->email_manajer,
-                    'password' => $data_manajer->password,
+                    'password' => $data_manajer->password_manajer,
                 );
 
                 $this->session->set_userdata($session_data);
