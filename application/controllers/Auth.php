@@ -8,10 +8,6 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_model');
-
-        if ($this->session->userdata('login') == 'true') {
-            redirect('');
-        }
     }
 
     /**
@@ -65,5 +61,11 @@ class Auth extends CI_Controller
             $this->session->set_flashdata('auth', 'Akun Tidak Terdaftar');
             redirect('login', 'refresh');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('login');
     }
 }
