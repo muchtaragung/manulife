@@ -44,7 +44,7 @@ class Manajer extends CI_Controller
     {
         $manajer['nama_manajer']     = $this->input->post('nama');
         $manajer['email_manajer']    = $this->input->post('email');
-        $manajer['password_manajer'] = $this->input->post('password');
+        $manajer['password_manajer'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
 
         $this->Manajer_model->save($manajer);
         $this->session->set_flashdata('manajer', 'Berhasil Menambahkan Manajer Baru');
@@ -85,7 +85,7 @@ class Manajer extends CI_Controller
         // mengecek apakah memasukan password baru
         $password = $this->input->post('password');
         if (isset($password)) {
-            $manajer['password_manajer'] = $this->input->post('password');
+            $manajer['password_manajer'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
         } else {
             $manajer['password_manajer'] = $this->input->post('password_lama');
         }
