@@ -56,8 +56,8 @@ $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'auth/login';
 $route['auth'] = 'auth/auth';
 
-$route['peserta'] = 'Dashboard/list_peserta';
-$route['peserta/save'] = 'Dashboard/save_peserta';
+$route['staff'] = 'Dashboard/list_staff';
+$route['staff/save'] = 'Dashboard/save_staff';
 $route['goals/(:num)'] = 'Dashboard/list_goal/$1';
 
 $route['worksheet/(:num)'] = 'Worksheet/worksheet/$1';

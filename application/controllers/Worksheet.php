@@ -14,6 +14,7 @@ class Worksheet extends CI_Controller
         $this->load->model('Level_model');
         $this->load->model('Style_model');
         $this->load->model('Peserta_model');
+        $this->load->model('Staff_model');
 
         if ($this->session->userdata('login') != 'manajer') {
             $this->session->set_flashdata('auth', 'Login Sebelum Mengisi Worksheet');
@@ -26,10 +27,10 @@ class Worksheet extends CI_Controller
      *
      * @return void
      */
-    public function worksheet($peserta_id)
+    public function worksheet($staff_id)
     {
         $data['page_title'] = "Worksheet";
-        $data['peserta_id'] = $peserta_id;
+        $data['staff_id'] = $staff_id;
         $this->load->view('worksheet', $data);
     }
 
@@ -42,7 +43,7 @@ class Worksheet extends CI_Controller
     {
         // mengambil lalu menyimpan data goal
         $goal['goal'] = $this->input->post('goal');
-        $goal['peserta_id'] = $this->input->post('peserta_id');
+        $goal['staff_id'] = $this->input->post('staff_id');
         $this->Goal_model->save($goal);
 
         // mengambil data insert terakhir
@@ -86,7 +87,7 @@ class Worksheet extends CI_Controller
         $data['motivation'] = $this->Motivation_model->get_where($where)->row();
         $data['learning_level'] = $this->Level_model->get_where($where)->row();
         $data['leadership_style'] = $this->Style_model->get_where($where)->row();
-        $data['peserta']    = $this->Peserta_model->get_where(['id' => $data['goal']->peserta_id])->row();
+        $data['staff']    = $this->Staff_model->get_where(['id' => $data['goal']->staff_id])->row();
 
         // var_dump($data);
         $this->load->view('result', $data);

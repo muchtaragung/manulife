@@ -36,9 +36,9 @@
                     <li class="sidebar-title">Menu</li>
 
                     <li class="sidebar-item  ">
-                        <a href="<?= site_url('peserta') ?>" class='sidebar-link'>
+                        <a href="<?= site_url('staff') ?>" class='sidebar-link'>
                             <i class="bi bi-table"></i>
-                            <span>List Peserta</span>
+                            <span>List Staff</span>
                         </a>
                     </li>
 

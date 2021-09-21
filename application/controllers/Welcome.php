@@ -21,7 +21,7 @@ class Welcome extends CI_Controller
 	 */
 	public function index()
 	{
-		redirect('peserta');
+		redirect('staff');
 		// $this->load->view('welcome_message');
 	}
 }

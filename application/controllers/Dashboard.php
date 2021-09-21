@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller
         $this->load->model('Level_model');
         $this->load->model('Style_model');
         $this->load->model('Peserta_model');
+        $this->load->model('Staff_model');
 
         if ($this->session->userdata('login') != 'manajer') {
             $this->session->set_flashdata('auth', 'Silahkan Login Dahulu');
@@ -21,32 +22,44 @@ class Dashboard extends CI_Controller
         }
     }
 
-    public function list_peserta()
+    /**
+     * menampilkan list staff.
+     * menampilkan sesuai manajer.
+     * id manajer di ambil dari session.
+     * 
+     * @return void
+     */
+    public function list_staff()
     {
         $where = array('manajer_id' => $this->session->userdata('id'));
 
-        $data['page_title'] = 'List Peserta';
-        $data['peserta'] = $this->Peserta_model->get_where($where)->result();
+        $data['page_title'] = 'List Staff';
+        $data['staff'] = $this->Staff_model->get_where($where)->result();
 
-        $this->load->view('list_peserta', $data);
+        $this->load->view('list_staff', $data);
     }
 
-    public function save_peserta()
+    /**
+     * menyimpan data staff.
+     * 
+     * @return void
+     */
+    public function save_staff()
     {
-        $peserta['nama']    = $this->input->post('nama');
-        $peserta['email']   = $this->input->post('email');
-        $peserta['manajer_id'] = $this->session->userdata('id');
+        $peserta['nama_staff']    = $this->input->post('nama');
+        $peserta['email_staff']   = $this->input->post('email');
+        $peserta['manajer_id']    = $this->session->userdata('id');
 
         $this->session->set_flashdata('peserta', 'Berhasil Menambahkan Peserta');
-        $this->Peserta_model->save($peserta);
-        redirect('peserta');
+        $this->Staff_model->save($peserta);
+        redirect('staff');
     }
 
-    public function list_goal($peserta_id)
+    public function list_goal($staff_id)
     {
         $data['page_title'] = 'List Peserta';
-        $data['goals']      = $this->Goal_model->get_where(['peserta_id' => $peserta_id])->result();
-        $data['peserta_id'] = $peserta_id;
+        $data['goals']      = $this->Goal_model->get_where(['staff_id' => $staff_id])->result();
+        $data['staff_id']   = $staff_id;
         $this->load->view('list_goal', $data);
     }
 }

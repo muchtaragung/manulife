@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="card-content">
                                     <form action="<?= site_url('worksheet/save_worksheet') ?>" method="POST">
-                                        <input type="hidden" name="peserta_id" value="<?= $peserta_id ?>">
+                                        <input type="hidden" name="staff_id" value="<?= $staff_id ?>">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12">
