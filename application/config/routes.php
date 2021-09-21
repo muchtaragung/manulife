@@ -65,5 +65,3 @@ $route['result/(:num)'] = 'Worksheet/result/$1';
 
 $route['admin/login'] = 'auth/admin_login';
 $route['admin/auth'] = 'auth/admin_auth';
-
-$route['admin/manajer/list'] = 'admin/list_manajer';

@@ -92,13 +92,13 @@
                                             <td><?= $man->nama_manajer ?></td>
                                             <td><?= $man->email_manajer ?></td>
                                             <td>
-                                                <a href="<?= site_url('goals/' . $man->id) ?>" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">
+                                                <a href="<?= site_url('admin/manajer/edit/' . $man->id) ?>" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">
                                                     Edit
                                                 </a>
-                                                <a href="<?= site_url('goals/' . $man->id) ?>" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
+                                                <a href="<?= site_url('admin/manajer/delete/' . $man->id) ?>" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
                                                     Hapus
                                                 </a>
-                                                <a href="<?= site_url('goals/' . $man->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
+                                                <a href="<?= site_url('admin/staff/list/' . $man->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
                                                     Lihat Peserta
                                                 </a>
                                             </td>
