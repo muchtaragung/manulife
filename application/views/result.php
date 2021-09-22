@@ -280,7 +280,7 @@
 
                             <br>
                             <a href="<?= site_url('goals/' . $staff->id) ?>" class="btn btn-lg btn-primary">Back</a>
-                            <!-- <button onclick="window.print();" class="btn btn-lg brn-danger">Print</button> -->
+                            <a href="<?= site_url('worksheet/pdf/' . $goal->id) ?>" class="btn btn-lg brn-danger">Print</a>
                         </div>
                     </div>
 
