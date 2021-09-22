@@ -99,7 +99,7 @@
                                                 <button onclick="confirmDelete('<?= site_url('admin/staff/delete/' . $staf->id) ?>','staff')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
                                                     Hapus
                                                 </button>
-                                                <a href="<?= site_url('admin/staff/list/' . $staf->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
+                                                <a href="<?= site_url('admin/worksheet/list/' . $staf->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
                                                     Lihat Worksheet Staff
                                                 </a>
                                             </td>

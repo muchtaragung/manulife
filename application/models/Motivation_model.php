@@ -25,4 +25,42 @@ class Motivation_model extends CI_Model
     {
         return $this->db->get_where($this->table, $where);
     }
+
+    /**
+     * mengambil semua data tabel
+     *
+     * @return void
+     */
+    public function get_all()
+    {
+        return $this->db->get($this->table);
+    }
+
+    /**
+     * mengupdate data.
+     * arr data ada id nya
+     * idnya yang di pake untuk where
+     *
+     * data yang di update juga ada arr data
+     * @param array $data
+     * @return void
+     */
+    public function update(array $data)
+    {
+        $where['id'] = $data['id'];
+
+        return $this->db->where($where)->update($this->table, $data);
+    }
+
+    /**
+     * menghapus data
+     * arr where adalah id dari kolom yang akan di hapus
+     *
+     * @param array $where
+     * @return void
+     */
+    public function delete(array $where)
+    {
+        return $this->db->delete($this->table, $where);
+    }
 }
