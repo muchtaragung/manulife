@@ -27,12 +27,8 @@
                 </div>
                 <section class="section">
                     <div class="card">
-                        <div class="card-header d-flex justify-content-between">
+                        <div class="card-header">
                             <h3 class="card-title float-left">Tabel Peserta</h3>
-
-                            <a href="<?= site_url('worksheet/' . $staff_id) ?>" class="btn btn-success float-right">
-                                Tambah Worksheet
-                            </a>
                         </div>
                         <div class="card-body">
                             <table class="table table-striped" id="table1">
@@ -50,9 +46,12 @@
                                             <td><?= $a++ ?></td>
                                             <td><?= $goal->goal ?></td>
                                             <td>
-                                                <a href="<?= site_url('result/' . $goal->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
+                                                <a href="<?= site_url('worksheet/result/' . $goal->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
                                                     Lihat Result
                                                 </a>
+                                                <button onclick="confirmDelete('<?= site_url('admin/worksheet/delete/' . $goal->id) ?>','Goal')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
+                                                    Hapus
+                                                </button>
                                             </td>
                                         </tr>
                                     <?php endforeach ?>
@@ -77,6 +76,23 @@
         </div>
     </div>
     <?php $this->load->view('layouts/script') ?>
+
+    <script>
+        function confirmDelete(link, category) {
+            Swal.fire({
+                title: 'Apakah Anda Ingin Menghapus ' + category,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.replace(link)
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
