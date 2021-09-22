@@ -96,7 +96,7 @@
                                                 <a href="<?= site_url('admin/staff/edit/' . $staf->id) ?>" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">
                                                     Edit
                                                 </a>
-                                                <button onclick="confirmCancel('<?= site_url('admin/staff/delete/' . $staf->id) ?>','staff')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
+                                                <button onclick="confirmDelete('<?= site_url('admin/staff/delete/' . $staf->id) ?>','staff')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
                                                     Hapus
                                                 </button>
                                                 <a href="<?= site_url('admin/staff/list/' . $staf->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">

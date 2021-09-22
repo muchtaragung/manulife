@@ -94,7 +94,7 @@
                                                 <a href="<?= site_url('admin/manajer/edit/' . $man->id) ?>" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">
                                                     Edit
                                                 </a>
-                                                <button onclick="confirmCancel('<?= site_url('admin/manajer/delete/' . $man->id) ?>','Manajer')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
+                                                <button onclick="confirmDelete('<?= site_url('admin/manajer/delete/' . $man->id) ?>','Manajer')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
                                                     Hapus
                                                 </button>
                                                 <a href="<?= site_url('admin/staff/list/' . $man->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
@@ -131,11 +131,11 @@
         )
     </script>
     <?php $this->load->view('layouts/script') ?>
-    <?php if ($this->session->flashdata('staff')) : ?>
+    <?php if ($this->session->flashdata('manajer')) : ?>
         <script>
             Swal.fire(
                 'Berhasil',
-                '<?= $this->session->flashdata('staff') ?>',
+                '<?= $this->session->flashdata('manajer') ?>',
                 'success'
             )
         </script>
