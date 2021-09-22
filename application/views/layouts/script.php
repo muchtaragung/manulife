@@ -8,3 +8,4 @@
 </script>
 
 <script src="<?= base_url() ?>assets/js/main.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

@@ -72,7 +72,6 @@
                                     </div>
                                 </div>
                             </div>
-
                         </div>
                         <div class="card-body">
                             <table class="table table-striped" id="table1">
@@ -95,9 +94,9 @@
                                                 <a href="<?= site_url('admin/manajer/edit/' . $man->id) ?>" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">
                                                     Edit
                                                 </a>
-                                                <a href="<?= site_url('admin/manajer/delete/' . $man->id) ?>" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
+                                                <button onclick="confirmCancel('<?= site_url('admin/manajer/delete/' . $man->id) ?>','Manajer')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
                                                     Hapus
-                                                </a>
+                                                </button>
                                                 <a href="<?= site_url('admin/staff/list/' . $man->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
                                                     Lihat Peserta
                                                 </a>
@@ -124,7 +123,39 @@
             </footer>
         </div>
     </div>
+    <script>
+        Swal.fire(
+            'Berhasil',
+            'awokwo',
+            'success'
+        )
+    </script>
     <?php $this->load->view('layouts/script') ?>
+    <?php if ($this->session->flashdata('staff')) : ?>
+        <script>
+            Swal.fire(
+                'Berhasil',
+                '<?= $this->session->flashdata('staff') ?>',
+                'success'
+            )
+        </script>
+    <?php endif ?>
+    <script>
+        function confirmDelete(link, category) {
+            Swal.fire({
+                title: 'Apakah Anda Ingin Menghapus ' + category,
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Ya'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.replace(link)
+                }
+            })
+        }
+    </script>
 </body>
 
 </html>
