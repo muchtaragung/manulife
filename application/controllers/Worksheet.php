@@ -93,6 +93,25 @@ class Worksheet extends CI_Controller
         $this->load->view('result', $data);
     }
 
+    public function pdf($goal_id)
+    {
+        $this->load->library('pdf');
+
+        $where = ['goal_id' => $goal_id];
+
+        $data['goal']       = $this->Goal_model->get_where(['id' => $goal_id])->row();
+        $data['competence'] = $this->Competence_model->get_where($where)->row();
+        $data['motivation'] = $this->Motivation_model->get_where($where)->row();
+        $data['level'] = $this->Level_model->get_where($where)->row();
+        $data['style'] = $this->Style_model->get_where($where)->row();
+        $data['staff']    = $this->Staff_model->get_where(['id' => $data['goal']->staff_id])->row();
+
+        $this->pdf->setPaper('A4', 'potrait');
+        $this->pdf->filename = "laporan-" . $data['staff']->nama_staff . "-" . date('d M Y') . ".pdf";
+
+        $this->pdf->load_view('pdf/worksheet', $data);
+    }
+
     /**
      * menentukan level dan menyimpan ke database
      *
