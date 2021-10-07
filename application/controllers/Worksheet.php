@@ -1,6 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Csv;
+
 class Worksheet extends CI_Controller
 {
     public function __construct()
@@ -93,6 +96,24 @@ class Worksheet extends CI_Controller
         $this->load->view('result', $data);
     }
 
+    public function result_print($goal_id)
+    {
+
+
+        $where = ['goal_id' => $goal_id];
+
+        $data['goal']       = $this->Goal_model->get_where(['id' => $goal_id])->row();
+        $data['competence'] = $this->Competence_model->get_where($where)->row();
+        $data['motivation'] = $this->Motivation_model->get_where($where)->row();
+        $data['learning_level'] = $this->Level_model->get_where($where)->row();
+        $data['leadership_style'] = $this->Style_model->get_where($where)->row();
+        $data['staff']    = $this->Staff_model->get_where(['id' => $data['goal']->staff_id])->row();
+
+        $data['page_title'] = 'Worksheet Result - ' . $data['staff']->nama_staff;
+        // var_dump($data);
+        $this->load->view('result_print', $data);
+    }
+
     public function pdf($goal_id)
     {
         $this->load->library('pdf');
@@ -111,6 +132,35 @@ class Worksheet extends CI_Controller
 
         $this->pdf->load_view('pdf/worksheet', $data);
     }
+
+    // public function csv($id_user)
+    // {
+
+    //     $data = $this->user_
+
+    //     // var_dump($data);
+    //     // die();
+
+    //     // buat object spreadseet
+    //     $spreadsheet = new Spreadsheet();
+    //     $sheet = $spreadsheet->getActiveSheet();
+
+    //     // bagian nama coachee
+    //     $sheet->setCellValue('A2', 'Nama Coachee');
+
+
+    //     // set locale untuk filename dan waktu
+    //     setlocale(LC_TIME, 'id_ID');
+    //     date_default_timezone_set("Asia/Jakarta");
+
+    //     // $filename = $coachee['name'] . '-' . 'Sesi ' . $session['session'] . '-' . date('d M Y H:i:s') . '.csv';
+    //     // $foldername = 'csv' . DIRECTORY_SEPARATOR . $coach['name'] . DIRECTORY_SEPARATOR . $company['name'];
+
+    //     // mkdir(FCPATH . $foldername, 0755, true);
+    //     // $writer = new Csv($spreadsheet);
+    //     // $writer->save(FCPATH . $foldername . DIRECTORY_SEPARATOR . $filename);
+    //     // redirect($foldername . DIRECTORY_SEPARATOR . $filename);
+    // }
 
     /**
      * menentukan level dan menyimpan ke database
