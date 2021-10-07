@@ -216,7 +216,7 @@
                                 <!-- Behaviour Section -->
                                 <div class="row">
                                     <?php if ($learning_level->level == 'L1' | $learning_level->level == 'L1/2' | $learning_level->level == 'L2/1' | $learning_level->level == 'L2') : ?>
-                                        <div class="col-md-6 col-sm-12 mx-auto text-center">
+                                        <div class="col mx-auto text-center">
                                             <h3>Directing Behavior</h3>
                                             <ul class="list-group">
                                                 <li class="list-group-item">Set Smart Goal</li>
@@ -229,7 +229,7 @@
                                             </ul>
                                         </div>
                                     <?php elseif ($learning_level->level == 'L2/3' | $learning_level->level == 'L3/2') : ?>
-                                        <div class="col-md-6 col-sm-12 mx-auto">
+                                        <div class="col mx-auto">
                                             <h3>Directing Behavior</h3>
                                             <ul class="list-group">
                                                 <li class="list-group-item">Set Smart Goal</li>
@@ -242,7 +242,7 @@
                                             </ul>
                                         </div>
 
-                                        <div class="col-md-6 col-sm-12 mx-auto">
+                                        <div class="col mx-auto">
                                             <h3>Supporting Behavior</h3>
                                             <ul class="list-group">
                                                 <li class="list-group-item">Mendengarkan Dengan Perhatian</li>
@@ -255,7 +255,7 @@
                                             </ul>
                                         </div>
                                     <?php elseif ($learning_level->level == 'L3' | $learning_level->level == 'L3/4' | $learning_level->level == 'L4/3' | $learning_level->level == 'L4') : ?>
-                                        <div class="col-md-6 col-sm-12 mx-auto">
+                                        <div class="col mx-auto">
                                             <h3>Supproting Behaviour</h3>
                                             <ul class="list-group">
                                                 <li class="list-group-item">Mendengarkan Dengan Perhatian</li>
