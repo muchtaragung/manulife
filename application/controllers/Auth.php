@@ -52,7 +52,7 @@ class Auth extends CI_Controller
                 );
 
                 $this->session->set_userdata($session_data);
-                redirect('', 'refresh');
+                redirect('welcome', 'refresh');
             } else {
                 $this->session->set_flashdata('auth', 'Password Salah');
                 redirect('login', 'refresh');
