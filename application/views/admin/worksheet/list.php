@@ -31,25 +31,39 @@
                             <h3 class="card-title float-left">Tabel Peserta</h3>
                         </div>
                         <div class="card-body">
-                            <table class="table table-striped" id="table1">
+                            <table class="table table-striped text-center" id="table1">
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
+                                        <th>ID</th>
                                         <th scope="col">Goal</th>
+                                        <th>knowledge </th>
+                                        <th>skill </th>
+                                        <th>comitment </th>
+                                        <th>confidence </th>
+                                        <th>level </th>
+                                        <th>style </th>
                                         <th scope="col">Act</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $a = 1;
-                                    foreach ($goals as $goal) : ?>
+                                    foreach ($goals as $data) : ?>
                                         <tr>
                                             <td><?= $a++ ?></td>
-                                            <td><?= $goal->goal ?></td>
+                                            <td><?= $data->goal_id ?></td>
+                                            <td><?= $data->goal ?></td>
+                                            <td><?= $data->knowledge ?></td>
+                                            <td><?= $data->skill ?></td>
+                                            <td><?= $data->comitment ?></td>
+                                            <td><?= $data->confidence ?></td>
+                                            <td><?= $data->level ?></td>
+                                            <td><?= $data->style ?></td>
                                             <td>
-                                                <a href="<?= site_url('worksheet/result/' . $goal->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" title="Lihat Result">
-                                                    Lihat Result
+                                                <a href="<?= site_url('worksheet/result/' . $data->goal_id) ?>" class="btn btn-outline-primary btn-rounded btn-sm mx-auto my-auto" data-mdb-ripple-color="dark" title="Lihat Result">
+                                                    Result
                                                 </a>
-                                                <button onclick="confirmDelete('<?= site_url('admin/worksheet/delete/' . $goal->id) ?>','Goal')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark" title="Hapus">
+                                                <button onclick="confirmDelete('<?= site_url('admin/worksheet/delete/' . $data->goal_id) ?>','Goal')" class="btn btn-danger btn-rounded btn-sm mx-auto my-auto" data-mdb-ripple-color="dark" title="Hapus">
                                                     <i class="bi bi-trash"></i>
                                                 </button>
                                             </td>

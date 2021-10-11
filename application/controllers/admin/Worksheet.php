@@ -32,7 +32,16 @@ class Worksheet extends CI_Controller
     {
         $data['page_title'] = 'List Worksheet';
 
-        $data['goals'] = $this->Goal_model->get_where(['staff_id' => $staff_id])->result();
+        $join = [
+            ['competence', 'competence.goal_id = goal.id'],
+            ['motivation', 'motivation.goal_id = goal.id'],
+            ['learning_level', 'learning_level.goal_id = goal.id'],
+            ['leadership_style', 'leadership_style.goal_id = goal.id'],
+        ];
+
+        $where = ['goal.staff_id' => $staff_id];
+
+        $data['goals']      = $this->Goal_model->get_join_where($join, $where)->result();
         $data['staff_id'] = $staff_id;
 
         $this->load->view('admin/worksheet/list', $data);
