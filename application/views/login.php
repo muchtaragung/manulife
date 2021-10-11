@@ -15,14 +15,14 @@
 <body>
     <div id="auth">
 
-        <div class="row h-100">
+        <div class="row">
             <div class="col-lg-5 col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
                         <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a> -->
                         <h1 class="text-primary">Employee Analysis</h1>
                     </div>
-                    <h1 class="auth-title">Log in.</h1>
+                    <!-- <h1 class="auth-title">Log in.</h1> -->
                     <p class="auth-subtitle mb-5">Silahkan Login Untuk Melanjutkan</p>
                     <?php if ($this->session->flashdata('auth')) : ?>
                         <div class="alert alert-danger" role="alert">
