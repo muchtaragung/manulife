@@ -4,6 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Level_model extends CI_Model
 {
     private $table = 'learning_level';
+
     /**
      * menyimpan data ke tabel
      *
@@ -23,7 +24,11 @@ class Level_model extends CI_Model
      */
     public function get_where(array $where)
     {
-        return $this->db->get_where($this->table, $where);
+        $this->db->select("*");
+        $this->db->from($this->table);
+        $this->db->where($where);
+        $query = $this->db->get();
+        return $query;
     }
 
     /**
@@ -33,7 +38,10 @@ class Level_model extends CI_Model
      */
     public function get_all()
     {
-        return $this->db->get($this->table);
+        $this->db->select("*");
+        $this->db->from($this->table);
+        $query = $this->db->get();
+        return $query;
     }
 
     /**
@@ -53,6 +61,20 @@ class Level_model extends CI_Model
     }
 
     /**
+     * mengupdate data
+     * menggunakan where khusus
+     *
+     * @param [type] $where adalah data yang mana
+     * @param [type] $data adalah data yang akan di update
+     *
+     * @return void
+     */
+    public function update_where($where, $data)
+    {
+        return $this->db->where($where)->update($this->table, $data);
+    }
+
+    /**
      * menghapus data
      * arr where adalah id dari kolom yang akan di hapus
      *
@@ -62,5 +84,44 @@ class Level_model extends CI_Model
     public function delete(array $where)
     {
         return $this->db->delete($this->table, $where);
+    }
+
+    /**
+     * mengambil data dengan join
+     *
+     * @param array $join array dari join
+     * @param string $select
+     *
+     * @return void
+     */
+    public function get_join($join, $select = '*')
+    {
+        $this->db->select($select);
+        $this->db->from($this->table);
+        foreach ($join as $data) {
+            $this->db->join($data[0], $data[1], 'left');
+        }
+        return $this->db->get();
+    }
+
+    /**
+     * mengambil dengan join
+     * dan dengan kondisi where
+     *
+     * @param array $join
+     * @param array $where
+     * @param string $select
+     *
+     * @return void
+     */
+    public function get_join_where($join, $where, $select = '*')
+    {
+        $this->db->select($select);
+        $this->db->from($this->table);
+        foreach ($join as $data) {
+            $this->db->join($data[0], $data[1], 'left');
+        }
+        $this->db->where($where);
+        return $this->db->get();
     }
 }
