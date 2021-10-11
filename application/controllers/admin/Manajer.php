@@ -13,7 +13,7 @@ class Manajer extends CI_Controller
         $this->load->model('Motivation_model');
         $this->load->model('Level_model');
         $this->load->model('Style_model');
-        $this->load->model('Peserta_model');
+        $this->load->model('Staff_model');
         $this->load->model('Manajer_model');
 
         if ($this->session->userdata('login') != 'admin') {
@@ -106,7 +106,32 @@ class Manajer extends CI_Controller
     {
         $manajer['id'] = $manajer_id;
 
+        // mengambil data staff
+        $staff = $this->Staff_model->get_where(['manajer_id' => $manajer_id])->result();
+
+        foreach ($staff as $data) {
+            // mengambil data goal
+            $goal = $this->Goal_model->get_where(['staff_id' => $data->id])->result();
+
+            // menghapus data goal
+            foreach ($goal as $data_goal) {
+                // menghapus data competence motivation style level
+                $this->Competence_model->delete(['goal_id' => $data_goal->id]);
+                $this->Motivation_model->delete(['goal_id' => $data_goal->id]);
+                $this->Style_model->delete(['goal_id' => $data_goal->id]);
+                $this->Level_model->delete(['goal_id' => $data_goal->id]);
+
+                // menghapus data goal
+                $this->Goal_model->delete(['id' => $data_goal->id]);
+            }
+
+            // menhapus staff
+            $this->Staff_model->delete(['id' => $data->id]);
+        }
+
+        // menghapus manajer
         $this->Manajer_model->delete($manajer);
+
         $this->session->set_flashdata('manajer', 'Berhasil Menghapus Manajer');
         redirect('admin/manajer/list');
     }
