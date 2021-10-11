@@ -46,11 +46,11 @@
                                             <td><?= $a++ ?></td>
                                             <td><?= $goal->goal ?></td>
                                             <td>
-                                                <a href="<?= site_url('worksheet/result/' . $goal->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
+                                                <a href="<?= site_url('worksheet/result/' . $goal->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark" title="Lihat Result">
                                                     Lihat Result
                                                 </a>
-                                                <button onclick="confirmDelete('<?= site_url('admin/worksheet/delete/' . $goal->id) ?>','Goal')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
-                                                    Hapus
+                                                <button onclick="confirmDelete('<?= site_url('admin/worksheet/delete/' . $goal->id) ?>','Goal')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark" title="Hapus">
+                                                    <i class="bi bi-trash"></i>
                                                 </button>
                                             </td>
                                         </tr>

@@ -93,14 +93,14 @@
                                             <td><?= $staf->nama_staff ?></td>
                                             <td><?= $staf->email_staff ?></td>
                                             <td>
-                                                <a href="<?= site_url('admin/staff/edit/' . $staf->id) ?>" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark">
-                                                    Edit
+                                                <a href="<?= site_url('admin/staff/edit/' . $staf->id) ?>" class="btn btn-info btn-rounded" data-mdb-ripple-color="dark" title="Edit">
+                                                    <i class="bi bi-pencil-square"></i>
                                                 </a>
-                                                <button onclick="confirmDelete('<?= site_url('admin/staff/delete/' . $staf->id) ?>','staff')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark">
-                                                    Hapus
+                                                <button onclick="confirmDelete('<?= site_url('admin/staff/delete/' . $staf->id) ?>','staff')" class="btn btn-danger btn-rounded" data-mdb-ripple-color="dark" title="Hapus">
+                                                    <i class="bi bi-trash"></i>
                                                 </button>
-                                                <a href="<?= site_url('admin/worksheet/list/' . $staf->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                                                    Lihat Worksheet Staff
+                                                <a href="<?= site_url('admin/worksheet/list/' . $staf->id) ?>" class="btn btn-primary btn-rounded" data-mdb-ripple-color="dark" title="Worksheet">
+                                                    <i class="bi bi-file-earmark-text-fill"></i>
                                                 </a>
                                             </td>
                                         </tr>
