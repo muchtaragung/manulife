@@ -103,8 +103,24 @@ class Staff extends CI_Controller
     {
         $staff = $this->Staff_model->get_where(['id' => $staff_id])->row_array();
 
-        $this->Staff_model->delete($staff);
-        $this->session->set_flashdata('staff', 'Berhasil Mengupdate staff ' . $staff['nama_staff']);
-        redirect('admin/staff/list/' . $staff['manajer_id']);
+        // mengambil data goal
+        $goal = $this->Goal_model->get_where(['staff_id' => $staff['id']])->result();
+
+        // menghapus data goal
+        foreach ($goal as $data_goal) {
+            // menghapus data competence motivation style level
+            $this->Competence_model->delete(['goal_id' => $data_goal->id]);
+            $this->Motivation_model->delete(['goal_id' => $data_goal->id]);
+            $this->Style_model->delete(['goal_id' => $data_goal->id]);
+            $this->Level_model->delete(['goal_id' => $data_goal->id]);
+
+            // menghapus data goal
+            $this->Goal_model->delete(['id' => $data_goal->id]);
+        }
+
+        // menhapus staff
+        $this->Staff_model->delete(['id' => $staff['id']]);
+        $this->session->set_flashdata('staff', 'Berhasil Menghapus staff ' . $staff['nama_staff']);
+        redirect('admin/staff/list/ ' . $staff['manajer_id']);
     }
 }
