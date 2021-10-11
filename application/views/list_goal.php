@@ -40,7 +40,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Goal</th>
-                                        <th scope="col">Act</th>
+                                        <th scope="col">Action
                                     </tr>
                                 </thead>
                                 <tbody>

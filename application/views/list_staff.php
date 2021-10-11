@@ -77,7 +77,7 @@
                                         <th>#</th>
                                         <th>Nama</th>
                                         <th>Email</th>
-                                        <th>Act</th>
+                                        <th>Action
                                     </tr>
                                 </thead>
                                 <tbody>

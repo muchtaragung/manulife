@@ -43,7 +43,7 @@
                                         <th>confidence </th>
                                         <th>level </th>
                                         <th>style </th>
-                                        <th scope="col">Act</th>
+                                        <th scope="col">Action
                                     </tr>
                                 </thead>
                                 <tbody>
