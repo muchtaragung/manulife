@@ -16,7 +16,7 @@
     <div id="auth">
 
         <div class="row">
-            <div class="col-lg-5 col-12">
+            <div class=" col-12">
                 <div id="auth-left">
                     <div class="auth-logo">
                         <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a> -->
@@ -27,6 +27,11 @@
                     <?php if ($this->session->flashdata('auth')) : ?>
                         <div class="alert alert-danger" role="alert">
                             <?= $this->session->flashdata('auth') ?>
+                        </div>
+                    <?php endif ?>
+                    <?php if ($this->session->flashdata('msg')) : ?>
+                        <div class="alert alert-success" role="alert">
+                            <?= $this->session->flashdata('msg') ?>
                         </div>
                     <?php endif ?>
                     <form method="post" action="<?= site_url('auth') ?>">
