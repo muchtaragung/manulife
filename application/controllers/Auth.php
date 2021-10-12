@@ -8,6 +8,8 @@ class Auth extends CI_Controller
     {
         parent::__construct();
         $this->load->model('Auth_model');
+        $this->load->model('Manajer_model', 'manajer');
+        $this->load->library('form_validation');
     }
 
     /**
@@ -114,5 +116,65 @@ class Auth extends CI_Controller
     {
         $this->session->sess_destroy();
         redirect('login');
+    }
+
+    public function registration()
+    {
+        $this->load->view('registration');
+    }
+
+    public function register()
+    {
+        // mengambil data inputan user
+        $nama             = $this->input->post('nama');
+        $email            = $this->input->post('email');
+        $password         = $this->input->post('password');
+
+        // mengatur form validation
+        $this->form_validation->set_rules(
+            'nama',
+            'Nama',
+            'required',
+            array(
+                'required' => 'Nama tidak boleh kosong!'
+            )
+        );
+        $this->form_validation->set_rules(
+            'email',
+            'Email',
+            'required|is_unique[manajer.email_manajer]',
+            array(
+                'required' => 'Email tidak boleh kosong!'
+            )
+        );
+        $this->form_validation->set_rules(
+            'password',
+            'Password',
+            'required',
+            array(
+                'required' => 'Password tidak boleh kosong!'
+            )
+        );
+        $this->form_validation->set_rules(
+            'password_confirm',
+            'Konfirmasi Password',
+            'required|matches[password]',
+            array(
+                'required' => 'Password Konfirmasi tidak boleh kosong!',
+                'matches' => 'Password Tidak Sama'
+            )
+        );
+
+        if ($this->form_validation->run() == FALSE) {
+            $this->registration();
+        } else {
+            $manajer['nama_manajer'] = $nama;
+            $manajer['email_manajer'] = $email;
+            $manajer['password_manajer'] = password_hash($password, PASSWORD_DEFAULT);
+
+            $this->manajer->save($manajer);
+            $this->session->set_flashdata('msg', 'Registrasi Berhasil Silahkan Login');
+            redirect('login');
+        }
     }
 }
