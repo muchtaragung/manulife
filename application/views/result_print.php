@@ -50,8 +50,6 @@
                                 </div>
                                 <!-- End Goal Section -->
 
-                                <br>
-                                <hr style="height: 3px;color:black">
 
                                 <!-- Competence & Motivation Section -->
                                 <div class="row">
@@ -111,8 +109,6 @@
                                 </div>
                                 <!-- End Competence & Motivation Section -->
 
-                                <br>
-                                <hr style="height: 3px;color:black">
 
                                 <!-- Learning Level & Leadership Style Section -->
                                 <div class="row">
@@ -210,8 +206,6 @@
                                 </div>
                                 <!-- End Learning Level & Leadership Style Section -->
 
-                                <br>
-                                <hr style="height: 3px;color:black">
 
                                 <!-- Behaviour Section -->
                                 <div class="row">
