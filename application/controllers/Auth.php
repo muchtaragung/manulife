@@ -144,7 +144,8 @@ class Auth extends CI_Controller
             'Email',
             'required|is_unique[manajer.email_manajer]',
             array(
-                'required' => 'Email tidak boleh kosong!'
+                'required' => 'Email tidak boleh kosong!',
+                'is_unique' => 'Email Sudah Digunakan'
             )
         );
         $this->form_validation->set_rules(
