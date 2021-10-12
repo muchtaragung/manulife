@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="<?= base_url('') ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/css/app.css">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/css/pages/auth.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>assets/dist/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>assets/dist/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>assets/dist/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= base_url() ?>assets/dist/favicon/site.webmanifest">
 </head>
 
 <body>
