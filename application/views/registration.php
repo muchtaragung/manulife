@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrasi Manajer</title>
+    <title>Registrasi</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/css/bootstrap.css">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
@@ -24,13 +24,13 @@
                 <div id="auth-left">
                     <div class="auth-logo">
                         <!-- <a href="index.html"><img src="assets/images/logo/logo.png" alt="Logo"></a> -->
-                        <h1 class="text-primary">Registrasi Manajer</h1>
+                        <h1 class="text-primary">Registrasi</h1>
                     </div>
                     <!-- <h1 class="auth-title">Log in.</h1> -->
                     <p class="auth-subtitle mb-5">Silahkan Registrasi Akun Baru</p>
                     <?php echo form_open('register'); ?>
                     <div class="form-group position-relative has-icon-left mb-4">
-                        <input type="text" class="form-control form-control-xl" placeholder="Nama Manajer" name="nama">
+                        <input type="text" class="form-control form-control-xl" placeholder="Nama " name="nama">
                         <div class="form-control-icon">
                             <i class="bi bi-person"></i>
                         </div>
