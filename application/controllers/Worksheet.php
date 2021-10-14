@@ -107,7 +107,7 @@ class Worksheet extends CI_Controller
         $data['staff']    = $this->Staff_model->get_where(['id' => $data['goal']->staff_id])->row();
 
         $data['page_title'] = 'Worksheet Result - ' . $data['staff']->nama_staff;
-        // var_dump($data);
+        var_dump($data);
         $this->load->view('result_print', $data);
     }
 
@@ -128,6 +128,7 @@ class Worksheet extends CI_Controller
         $this->pdf->filename = "laporan-" . $data['staff']->nama_staff . "-" . date('d M Y') . ".pdf";
 
         $this->pdf->load_view('pdf/worksheet', $data);
+        // $this->load->view('pdf/worksheet', $data);
     }
 
     /**
