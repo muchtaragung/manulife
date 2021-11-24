@@ -104,6 +104,21 @@ class Staff_model extends CI_Model
         return $this->db->get();
     }
 
+    public function get_join_order($join, $select = '*', $order)
+    {
+        $this->db->select($select);
+        $this->db->from($this->table);
+        foreach ($join as $data) {
+            $this->db->join($data[0], $data[1], 'left');
+        }
+        foreach ($order as $data) {
+            $this->db->order_by($data[0], $data[1]);
+        }
+        return $this->db->get();
+    }
+
+
+
     /**
      * mengambil dengan join
      * dan dengan kondisi where
