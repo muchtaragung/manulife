@@ -69,7 +69,7 @@
                             <?= form_error('password_confirm') ?>
                         </div>
                     <?php endif ?>
-                    <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Registrasi</button>
+<!--                     <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Registrasi</button> --> -->
                     <?php echo form_close(); ?>
 
                     <div class="text-center mt-5 text-lg fs-4">
