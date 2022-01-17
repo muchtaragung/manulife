@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'a3c8ed515065c854755ca50dedbf6cd769faa1c2',
+        'reference' => 'b09e2cf7d65430420d168bc5c2ca16a13a5f6a79',
         'name' => 'korpora/payments',
         'dev' => true,
     ),
@@ -19,13 +19,24 @@
             'reference' => '6410c4b8352cb64218641457cef64997e6b784fb',
             'dev_requirement' => true,
         ),
+        'dompdf/dompdf' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../dompdf/dompdf',
+            'aliases' => array(
+                0 => '9999999-dev',
+            ),
+            'reference' => '5d34fd2b4d23760b2a374d6ba8f51f3f3c15878f',
+            'dev_requirement' => false,
+        ),
         'ezyang/htmlpurifier' => array(
-            'pretty_version' => 'v4.13.0',
-            'version' => '4.13.0.0',
+            'pretty_version' => 'v4.14.0',
+            'version' => '4.14.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ezyang/htmlpurifier',
             'aliases' => array(),
-            'reference' => '08e27c97e4c6ed02f37c5b2b20488046c8d90d75',
+            'reference' => '12ab42bd6e742c70c0a52f7b82477fcd44e64b75',
             'dev_requirement' => false,
         ),
         'korpora/payments' => array(
@@ -34,7 +45,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'a3c8ed515065c854755ca50dedbf6cd769faa1c2',
+            'reference' => 'b09e2cf7d65430420d168bc5c2ca16a13a5f6a79',
             'dev_requirement' => false,
         ),
         'maennchen/zipstream-php' => array(
@@ -52,7 +63,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../markbaker/complex',
             'aliases' => array(),
-            'reference' => 'ab8bc271e404909db09ff2d5ffa1e538085c0f22',
+            'reference' => 'c0598fc4fc0af00e2b3397b22336d9b3f70703a9',
             'dev_requirement' => false,
         ),
         'markbaker/matrix' => array(
@@ -94,6 +105,24 @@
             'reference' => 'b942d263c641ddb5190929ff840c68f78713e937',
             'dev_requirement' => false,
         ),
+        'phenx/php-font-lib' => array(
+            'pretty_version' => '0.5.4',
+            'version' => '0.5.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phenx/php-font-lib',
+            'aliases' => array(),
+            'reference' => 'dd448ad1ce34c63d09baccd05415e361300c35b4',
+            'dev_requirement' => false,
+        ),
+        'phenx/php-svg-lib' => array(
+            'pretty_version' => '0.4.0',
+            'version' => '0.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../phenx/php-svg-lib',
+            'aliases' => array(),
+            'reference' => '3ffbbb037f0871c3a819e90cff8b36dd7e656189',
+            'dev_requirement' => false,
+        ),
         'phpdocumentor/reflection-common' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
@@ -113,7 +142,7 @@
             'aliases' => array(
                 0 => '5.x-dev',
             ),
-            'reference' => '622548b623e81ca6d78b721c5e029f4ce664f170',
+            'reference' => '21481a5c97e8332f7279e31219c32faa2da21c79',
             'dev_requirement' => true,
         ),
         'phpdocumentor/type-resolver' => array(
@@ -122,7 +151,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../phpdocumentor/type-resolver',
             'aliases' => array(),
-            'reference' => '2a7ec2a310e8dff274c8af3bf3005288f0b1b7f6',
+            'reference' => '93ebd0014cab80c4ea9f5e297ea48672f1b87706',
             'dev_requirement' => true,
         ),
         'phpoffice/phpspreadsheet' => array(
@@ -133,7 +162,7 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
-            'reference' => 'b67404229a424325c6ecca60c9b197e491be4ac3',
+            'reference' => '95d9cc965da9880ef19ec4a6e636c8a80c87320b',
             'dev_requirement' => false,
         ),
         'phpspec/prophecy' => array(
@@ -250,6 +279,15 @@
             'reference' => '408d5eafb83c57f6365a3ca330ff23aa4a5fa39b',
             'dev_requirement' => false,
         ),
+        'sabberworm/php-css-parser' => array(
+            'pretty_version' => '8.4.0',
+            'version' => '8.4.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../sabberworm/php-css-parser',
+            'aliases' => array(),
+            'reference' => 'e41d2140031d533348b2192a83f02d8dd8a71d30',
+            'dev_requirement' => false,
+        ),
         'sebastian/code-unit-reverse-lookup' => array(
             'pretty_version' => '1.0.x-dev',
             'version' => '1.0.9999999.9999999-dev',
@@ -287,12 +325,12 @@
             'dev_requirement' => true,
         ),
         'sebastian/exporter' => array(
-            'pretty_version' => '2.0.x-dev',
-            'version' => '2.0.9999999.9999999-dev',
+            'pretty_version' => '2.0.0',
+            'version' => '2.0.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../sebastian/exporter',
             'aliases' => array(),
-            'reference' => '5e8e30670c3f36481e75211dbbcfd029a41ebf07',
+            'reference' => 'ce474bdd1a34744d7ac5d6aad3a46d48d9bac4c4',
             'dev_requirement' => true,
         ),
         'sebastian/global-state' => array(
@@ -341,25 +379,21 @@
             'dev_requirement' => true,
         ),
         'symfony/polyfill-ctype' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'v1.24.0',
+            'version' => '1.24.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-ctype',
-            'aliases' => array(
-                0 => '1.23.x-dev',
-            ),
+            'aliases' => array(),
             'reference' => '30885182c981ab175d4d034db0f6f469898070ab',
             'dev_requirement' => true,
         ),
         'symfony/polyfill-mbstring' => array(
-            'pretty_version' => 'dev-main',
-            'version' => 'dev-main',
+            'pretty_version' => 'v1.24.0',
+            'version' => '1.24.0.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-mbstring',
-            'aliases' => array(
-                0 => '1.23.x-dev',
-            ),
-            'reference' => '11b9acb5e8619aef6455735debf77dde8825795c',
+            'aliases' => array(),
+            'reference' => '0abb51d2f102e00a4eefcf46ba7fec406d245825',
             'dev_requirement' => false,
         ),
         'symfony/yaml' => array(
@@ -368,7 +402,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/yaml',
             'aliases' => array(),
-            'reference' => '2c309e258adeb9970229042be39b360d34986fad',
+            'reference' => 'a19f7c44ba665fa9d9d415cc4493361381b93f9b',
             'dev_requirement' => true,
         ),
         'webmozart/assert' => array(
