@@ -19,8 +19,8 @@
                 <div class="page-title">
                     <div class="row">
                         <div class="col-12 col-md-6 order-md-1 order-last">
-                            <h3>Tabel Goal</h3>
-                            <p class="text-subtitle text-muted">List Goal Dari Peserta</p>
+                            <h3>Tabel Tugas</h3>
+                            <p class="text-subtitle text-muted">List Tugas Dari Peserta</p>
 
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th>ID</th>
-                                        <th scope="col">Goal</th>
+                                        <th scope="col">Tugas</th>
                                         <th>knowledge </th>
                                         <th>skill </th>
                                         <th>comitment </th>
@@ -63,7 +63,7 @@
                                                 <a href="<?= site_url('worksheet/result/' . $data->goal_id) ?>" class="btn btn-outline-primary btn-rounded btn-sm mx-auto my-auto" data-mdb-ripple-color="dark" title="Lihat Result">
                                                     Result
                                                 </a>
-                                                <button onclick="confirmDelete('<?= site_url('admin/worksheet/delete/' . $data->goal_id) ?>','Goal')" class="btn btn-danger btn-rounded btn-sm mx-auto my-auto" data-mdb-ripple-color="dark" title="Hapus">
+                                                <button onclick="confirmDelete('<?= site_url('admin/worksheet/delete/' . $data->goal_id) ?>','Tugas')" class="btn btn-danger btn-rounded btn-sm mx-auto my-auto" data-mdb-ripple-color="dark" title="Hapus">
                                                     <i class="bi bi-trash"></i>
                                                 </button>
                                             </td>

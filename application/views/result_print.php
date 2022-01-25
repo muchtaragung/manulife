@@ -24,7 +24,7 @@
                             <div class="card-body">
                                 <h1 class="card-title">Result</h1>
                                 <br>
-                                <!-- Goal Section -->
+                                <!-- Tugas Section -->
                                 <div class="row">
                                     <div class="col">
                                         <h3 class="card-title">staff</h3>
@@ -42,13 +42,13 @@
                                         </table>
                                     </div>
                                     <div class="col">
-                                        <h3 class="card-title">Goals</h3>
+                                        <h3 class="card-title">Tugas</h3>
                                         <p class="card-text">
                                             <?= $goal->goal ?>
                                         </p>
                                     </div>
                                 </div>
-                                <!-- End Goal Section -->
+                                <!-- End Tugas Section -->
 
 
                                 <!-- Competence & Motivation Section -->
@@ -213,7 +213,7 @@
                                         <div class="col mx-auto text-center">
                                             <h3>Directing Behavior</h3>
                                             <ul class="list-group">
-                                                <li class="list-group-item">Set Smart Goal</li>
+                                                <li class="list-group-item">Set Smart Tugas</li>
                                                 <li class="list-group-item">Contohkan Dan Peragakan</li>
                                                 <li class="list-group-item">Berikan Step Stepnya</li>
                                                 <li class="list-group-item">Mengidentifikasi Proses</li>
@@ -226,7 +226,7 @@
                                         <div class="col mx-auto">
                                             <h3>Directing Behavior</h3>
                                             <ul class="list-group">
-                                                <li class="list-group-item">Set Smart Goal</li>
+                                                <li class="list-group-item">Set Smart Tugas</li>
                                                 <li class="list-group-item">Contohkan Dan Peragakan</li>
                                                 <li class="list-group-item">Berikan Step Stepnya</li>
                                                 <li class="list-group-item">Mengidentifikasi Proses</li>

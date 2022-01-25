@@ -32,7 +32,7 @@
             <td><?= $staff->email_staff ?></td>
         </tr>
         <tr>
-            <th>Goal</th>
+            <th>Tugas</th>
             <td>:</td>
             <td><?= $goal->goal ?></td>
         </tr>
@@ -152,7 +152,7 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Set Smart Goal</li>
+                        <li>Set Smart Tugas</li>
                         <li>Contohkan Dan Peragakan</li>
                         <li>Berikan Step Stepnya</li>
                         <li>Mengidentifikasi Proses</li>
@@ -171,7 +171,7 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Set Smart Goal</li>
+                        <li>Set Smart Tugas</li>
                         <li>Contohkan Dan Peragakan</li>
                         <li>Berikan Step Stepnya</li>
                         <li>Mengidentifikasi Proses</li>
