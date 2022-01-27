@@ -44,17 +44,23 @@ class Auth extends CI_Controller
             // mengecek apakah password benar
             if (password_verify($password, $data_manajer->password_manajer)) {
 
-                // set data manajer yang akan di masukan ke session
-                $session_data = array(
-                    'login'    => 'manajer',
-                    'id'       => $data_manajer->id,
-                    'name'     => $data_manajer->nama_manajer,
-                    'email'    => $data_manajer->email_manajer,
-                    'password' => $data_manajer->password_manajer,
-                );
+                //cek apakah akun sudah expired 
+                if ($data_manajer->expired_at === null || date('Y-m-d') < $data_manajer->expired_at) {
+                    // set data manajer yang akan di masukan ke session
+                    $session_data = array(
+                        'login'    => 'manajer',
+                        'id'       => $data_manajer->id,
+                        'name'     => $data_manajer->nama_manajer,
+                        'email'    => $data_manajer->email_manajer,
+                        'password' => $data_manajer->password_manajer,
+                    );
 
-                $this->session->set_userdata($session_data);
-                redirect('welcome', 'refresh');
+                    $this->session->set_userdata($session_data);
+                    redirect('welcome', 'refresh');
+                } else if (date('Y-m-d') >= $data_manajer->expired_at) {
+                    $this->session->set_flashdata('auth', 'Akun expired');
+                    redirect('login', 'refresh');
+                }
             } else {
                 $this->session->set_flashdata('auth', 'Password Salah');
                 redirect('login', 'refresh');
