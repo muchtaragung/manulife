@@ -37,8 +37,8 @@
                                         <input type="hidden" name="staff_id" value="<?= $staff_id ?>">
                                         <div class="card-body">
                                             <div class="row">
-                                                <div class="col-md-12">
-                                                    <label for="">Goals</label>
+                                                <div class="col-md-12 mb-5">
+                                                    <label for="">Tugas</label>
                                                     <br>
                                                     <textarea name="goal" id="" cols="30" rows="5" class="form-control" required></textarea>
                                                 </div>

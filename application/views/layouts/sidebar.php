@@ -25,6 +25,12 @@
                     </li>
 
                     <li class="sidebar-item  ">
+                        <a href="<?= site_url('admin/export/all') ?>" class='sidebar-link'>
+                            <span>Export Data Staff Tugas</span>
+                        </a>
+                    </li>
+
+                    <li class="sidebar-item  ">
                         <a href="<?= site_url('auth/logout') ?>" class='sidebar-link'>
                             <i class="bi bi-door-closed"></i>
                             <span>Logout</span>

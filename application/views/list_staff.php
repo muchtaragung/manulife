@@ -89,7 +89,7 @@
                                             <td><?= $staf->email_staff ?></td>
                                             <td>
                                                 <a href="<?= site_url('goals/' . $staf->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                                                    Lihat Goal
+                                                    Lihat Tugas
                                                 </a>
                                             </td>
                                         </tr>

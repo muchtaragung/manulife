@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="<?= base_url('') ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/css/app.css">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/css/pages/auth.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>assets/dist/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>assets/dist/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>assets/dist/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= base_url() ?>assets/dist/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -26,7 +30,7 @@
                     <p class="auth-subtitle mb-5">Silahkan Registrasi Akun Baru</p>
                     <?php echo form_open('register'); ?>
                     <div class="form-group position-relative has-icon-left mb-4">
-                        <input type="text" class="form-control form-control-xl" placeholder="Nama" name="nama">
+                        <input type="text" class="form-control form-control-xl" placeholder="Nama " name="nama">
                         <div class="form-control-icon">
                             <i class="bi bi-person"></i>
                         </div>
@@ -69,7 +73,6 @@
                             <?= form_error('password_confirm') ?>
                         </div>
                     <?php endif ?>
-<!--                     <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Registrasi</button> --> -->
                     <?php echo form_close(); ?>
 
                     <div class="text-center mt-5 text-lg fs-4">

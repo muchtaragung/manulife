@@ -10,6 +10,10 @@
     <link rel="stylesheet" href="<?= base_url('') ?>assets/vendors/bootstrap-icons/bootstrap-icons.css">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/css/app.css">
     <link rel="stylesheet" href="<?= base_url('') ?>assets/css/pages/auth.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url() ?>assets/dist/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url() ?>assets/dist/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url() ?>assets/dist/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= base_url() ?>assets/dist/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -50,7 +54,6 @@
                         <button type="submit" class="btn btn-primary btn-block btn-lg shadow-lg mt-5">Log in</button>
                     </form>
                     <div class="text-center mt-5 text-lg fs-4">
-                        <p class="text-gray-600">Belum Punya Akun? <a href="<?= site_url('registration') ?>" class="font-bold">Daftar</a>.</p>
                         <!-- <p><a class="font-bold" href="auth-forgot-password.html">Forgot password?</a>.</p> -->
                     </div>
                 </div>
