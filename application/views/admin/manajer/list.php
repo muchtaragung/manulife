@@ -57,6 +57,10 @@
                                                 <div class="form-group">
                                                     <input type="password" placeholder="Password manajer" class="form-control" name="password">
                                                 </div>
+                                                <label>Account Expired Date </label>
+                                                <div class="form-group">
+                                                    <input type="date" class="form-control" name="expired_at">
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
@@ -80,6 +84,7 @@
                                         <th>#</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Expired Date</th>
                                         <th>Action
                                     </tr>
                                 </thead>
@@ -90,6 +95,7 @@
                                             <td><?= $a++ ?></td>
                                             <td><?= $man->nama_manajer ?></td>
                                             <td><?= $man->email_manajer ?></td>
+                                            <td><?= $man->expired_at ?></td>
                                             <td>
                                                 <a href="<?= site_url('admin/manajer/edit/' . $man->id) ?>" class="btn btn-outline-info btn-rounded" data-mdb-ripple-color="dark" title="Edit">
                                                     <i class="bi bi-pencil-square"></i>

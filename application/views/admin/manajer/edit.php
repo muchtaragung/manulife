@@ -71,6 +71,10 @@
                                                     </div>
                                                 </div>
                                             </div>
+                                            <label>Account Expired Date </label>
+                                            <div class="form-group">
+                                                <input type="date" class="form-control" name="expired_at" value="<?= $manajer->expired_at ?>">
+                                            </div>
                                             <div class="col-12 d-flex justify-content-end">
                                                 <button type="submit" class="btn btn-primary me-1 mb-1">Submit</button>
                                             </div>
