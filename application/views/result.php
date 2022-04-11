@@ -129,11 +129,9 @@
                                         <br>
                                         <?php switch ($learning_level->level) {
                                             case "L2/1":
-                                                echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 echo '<span  class=" mx-1 badge" style="background-color:#FF6D00">Drilling</span>';
                                                 break;
                                             case "L1/2":
-                                                echo '<span  class=" mx-1 badge "style="background-color:#FF6D00">Drilling</span>';
                                                 echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 break;
                                             case "L1":
@@ -143,22 +141,18 @@
                                                 echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 break;
                                             case "L2/3":
-                                                echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 break;
                                             case "L3/2":
-                                                echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 break;
                                             case "L3":
                                                 echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 break;
                                             case "L3/4":
-                                                echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 echo '<span  class=" mx-1 badge bg-info">Assigning</span>';
                                                 break;
                                             case "L4/3":
-                                                echo '<span  class=" mx-1 badge bg-info">Assigning</span>';
                                                 echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 break;
                                             case "L4":
@@ -175,11 +169,9 @@
                                         <br>
                                         <?php switch ($leadership_style->style) {
                                             case "S2/1":
-                                                echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 echo '<span  class=" mx-1 badge" style="background-color:#FF6D00">Drilling</span>';
                                                 break;
                                             case "S1/2":
-                                                echo '<span  class=" mx-1 badge "style="background-color:#FF6D00">Drilling</span>';
                                                 echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 break;
                                             case "S1":
@@ -189,22 +181,18 @@
                                                 echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 break;
                                             case "S2/3":
-                                                echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 break;
                                             case "S3/2":
-                                                echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 echo '<span  class=" mx-1 badge bg-warning">Mentoring</span>';
                                                 break;
                                             case "S3":
                                                 echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 break;
                                             case "S3/4":
-                                                echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 echo '<span  class=" mx-1 badge bg-info">Assigning</span>';
                                                 break;
                                             case "S4/3":
-                                                echo '<span  class=" mx-1 badge bg-info">Assigning</span>';
                                                 echo '<span  class=" mx-1 badge bg-success">Coaching</span>';
                                                 break;
                                             case "S4":
