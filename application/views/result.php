@@ -262,7 +262,7 @@
                                     </div>
                                 <?php elseif ($learning_level->level == 'L3' | $learning_level->level == 'L3/4' | $learning_level->level == 'L4/3' | $learning_level->level == 'L4') : ?>
                                     <div class="col-md-6 col-sm-12 mx-auto">
-                                        <h3>Supproting Behaviour</h3>
+                                        <h3>Supporting Behaviour</h3>
                                         <ul class="list-group">
                                             <li class="list-group-item">Mendengarkan Dengan Perhatian</li>
                                             <li class="list-group-item">Facilitate Problem Solving</li>
