@@ -26,7 +26,7 @@
 
                     <li class="sidebar-item  ">
                         <a href="<?= site_url('admin/export/all') ?>" class='sidebar-link'>
-                            <span>Export Data Staff Tugas</span>
+                            <span>Export Data Staff Job Desc</span>
                         </a>
                     </li>
 
