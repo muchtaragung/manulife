@@ -29,10 +29,15 @@
                     <div class="card">
                         <div class="card-header d-flex justify-content-between">
                             <h3 class="card-title float-left">Tabel Manajer</h3>
+                            <div class="float-right">
+                                <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#inlineForm2">
+                                    Upload CSV
+                                </button>
+                                <button type="button" class="btn btn-success mx-2" data-bs-toggle="modal" data-bs-target="#inlineForm">
+                                    Tambah Manajer
+                                </button>
+                            </div>
 
-                            <button type="button" class="btn btn-success float-right" data-bs-toggle="modal" data-bs-target="#inlineForm">
-                                Tambah Manajer
-                            </button>
 
                             <div class="modal fade text-left" id="inlineForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
                                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
@@ -57,6 +62,40 @@
                                                 <div class="form-group">
                                                     <input type="password" placeholder="Password manajer" class="form-control" name="password">
                                                 </div>
+                                                <label>Account Expired Date </label>
+                                                <div class="form-group">
+                                                    <input type="date" class="form-control" name="expired_at">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                    <i class="bx bx-x d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Close</span>
+                                                </button>
+                                                <button type="submit" class="btn btn-primary ml-1">
+                                                    <i class="bx bx-check d-block d-sm-none"></i>
+                                                    <span class="d-none d-sm-block">Submit</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade text-left" id="inlineForm2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel33" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" id="myModalLabel33">Upload Manajer CSV</h4>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <i data-feather="x"></i>
+                                            </button>
+                                        </div>
+                                        <form action="<?= site_url('admin/manajer/csv') ?>" method="post" enctype="multipart/form-data">
+                                            <div class="modal-body">
+                                                <label>FILE CSV <a href="">Example</a></label>
+                                                <div class="form-group">
+                                                    <input type="file" class="form-control" name="csv">
+                                                </div>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
@@ -80,6 +119,7 @@
                                         <th>#</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Expired Date</th>
                                         <th>Action
                                     </tr>
                                 </thead>
@@ -90,6 +130,7 @@
                                             <td><?= $a++ ?></td>
                                             <td><?= $man->nama_manajer ?></td>
                                             <td><?= $man->email_manajer ?></td>
+                                            <td><?= $man->expired_at ?></td>
                                             <td>
                                                 <a href="<?= site_url('admin/manajer/edit/' . $man->id) ?>" class="btn btn-outline-info btn-rounded" data-mdb-ripple-color="dark" title="Edit">
                                                     <i class="bi bi-pencil-square"></i>

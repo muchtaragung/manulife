@@ -32,7 +32,7 @@
             <td><?= $staff->email_staff ?></td>
         </tr>
         <tr>
-            <th>Tugas</th>
+            <th>Job Desc</th>
             <td>:</td>
             <td><?= $goal->goal ?></td>
         </tr>
@@ -152,11 +152,11 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Set Smart Tugas</li>
+                        <li>Set Smart Job Desc</li>
                         <li>Contohkan Dan Peragakan</li>
                         <li>Berikan Step Stepnya</li>
                         <li>Mengidentifikasi Proses</li>
-                        <li>Klasifikasikan Tugas</li>
+                        <li>Klasifikasikan Job Desc</li>
                         <li>Develop Action Plans</li>
                         <li>Monitor Performance</li>
                     </ul>
@@ -171,11 +171,11 @@
             <tr>
                 <td>
                     <ul>
-                        <li>Set Smart Tugas</li>
+                        <li>Set Smart Job Desc</li>
                         <li>Contohkan Dan Peragakan</li>
                         <li>Berikan Step Stepnya</li>
                         <li>Mengidentifikasi Proses</li>
-                        <li>Klasifikasikan Tugas</li>
+                        <li>Klasifikasikan Job Desc</li>
                         <li>Develop Action Plans</li>
                         <li>Monitor Performance</li>
                     </ul>

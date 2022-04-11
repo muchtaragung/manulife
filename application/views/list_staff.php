@@ -21,7 +21,6 @@
                         <div class="col-12 col-md-6 order-md-1 order-last">
                             <h3>Tabel Staff</h3>
                             <p class="text-subtitle text-muted">List Dari Staff</p>
-
                         </div>
                     </div>
                 </div>
@@ -89,7 +88,7 @@
                                             <td><?= $staf->email_staff ?></td>
                                             <td>
                                                 <a href="<?= site_url('goals/' . $staf->id) ?>" class="btn btn-outline-primary btn-rounded" data-mdb-ripple-color="dark">
-                                                    Lihat Tugas
+                                                    Lihat Job Desc
                                                 </a>
                                             </td>
                                         </tr>

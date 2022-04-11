@@ -45,6 +45,7 @@ class Manajer extends CI_Controller
         $manajer['nama_manajer']     = $this->input->post('nama');
         $manajer['email_manajer']    = $this->input->post('email');
         $manajer['password_manajer'] = password_hash($this->input->post('password'), PASSWORD_DEFAULT);
+        $manajer['expired_at']    = $this->input->post('expired_at');
 
         $this->Manajer_model->save($manajer);
         $this->session->set_flashdata('manajer', 'Berhasil Menambahkan Manajer Baru');
@@ -81,6 +82,7 @@ class Manajer extends CI_Controller
         $manajer['id']               = $this->input->post('id');
         $manajer['nama_manajer']     = $this->input->post('nama');
         $manajer['email_manajer']    = $this->input->post('email');
+        $manajer['expired_at']    = $this->input->post('expired_at');
 
         // mengecek apakah memasukan password baru
         $password = $this->input->post('password');
@@ -134,5 +136,44 @@ class Manajer extends CI_Controller
 
         $this->session->set_flashdata('manajer', 'Berhasil Menghapus Manajer');
         redirect('admin/manajer/list');
+    }
+
+    public function csv()
+    {
+        $file = $_FILES['csv']['tmp_name'];
+
+        // Medapatkan ekstensi file csv yang akan diimport.
+        $ekstensi  = explode('.', $_FILES['csv']['name']);
+
+        // Tampilkan peringatan jika submit tanpa memilih menambahkan file.
+        if (empty($file)) {
+            echo 'File tidak boleh kosong!';
+        } else {
+            // Validasi apakah file yang diupload benar-benar file csv.
+            if (strtolower(end($ekstensi)) === 'csv' && $_FILES["csv"]["size"] > 0) {
+
+                $i = 0;
+                $handle = fopen($file, "r");
+                while (($row = fgetcsv($handle, 2048))) {
+                    $i++;
+                    if ($i == 1) continue;
+
+                    // Data yang akan disimpan ke dalam databse
+                    $manajer['nama_manajer'] = $row[1];
+                    $manajer['email_manajer'] = $row[2];
+                    $manajer['password_manajer'] = password_hash($row[3], PASSWORD_DEFAULT);
+                    $manajer['expired_at'] =  $row[4];
+
+                    // Simpan data ke database.
+                    $this->Manajer_model->save($manajer);
+                }
+
+                fclose($handle);
+                $this->session->set_flashdata('manajer', 'Berhasil Mengupload CSV Manajer Baru');
+                redirect('admin/manajer/list');
+            } else {
+                echo 'Format file tidak valid!';
+            }
+        }
     }
 }

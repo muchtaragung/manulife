@@ -30,7 +30,7 @@
                         <div class="card-body">
                             <h1 class="card-title">Result</h1>
                             <br>
-                            <!-- Tugas Section -->
+                            <!-- Job Desc Section -->
                             <div class="row">
                                 <div class="col">
                                     <h3 class="card-title">staff</h3>
@@ -48,13 +48,13 @@
                                     </table>
                                 </div>
                                 <div class="col">
-                                    <h3 class="card-title">Tugas</h3>
+                                    <h3 class="card-title">Job Desc</h3>
                                     <p class="card-text">
                                         <?= $goal->goal ?>
                                     </p>
                                 </div>
                             </div>
-                            <!-- End Tugas Section -->
+                            <!-- End Job Desc Section -->
 
                             <br>
                             <hr style="height: 3px;color:black">
@@ -225,11 +225,11 @@
                                     <div class="col-md-6 col-sm-12 mx-auto text-center">
                                         <h3>Directing Behavior</h3>
                                         <ul class="list-group">
-                                            <li class="list-group-item">Set Smart Tugas</li>
+                                            <li class="list-group-item">Set Smart Job Desc</li>
                                             <li class="list-group-item">Contohkan Dan Peragakan</li>
                                             <li class="list-group-item">Berikan Step Stepnya</li>
                                             <li class="list-group-item">Mengidentifikasi Proses</li>
-                                            <li class="list-group-item">Klasifikasikan Tugas</li>
+                                            <li class="list-group-item">Klasifikasikan Job Desc</li>
                                             <li class="list-group-item">Develop Action Plans</li>
                                             <li class="list-group-item">Monitor Performance</li>
                                         </ul>
@@ -238,11 +238,11 @@
                                     <div class="col-md-6 col-sm-12 mx-auto">
                                         <h3>Directing Behavior</h3>
                                         <ul class="list-group">
-                                            <li class="list-group-item">Set Smart Tugas</li>
+                                            <li class="list-group-item">Set Smart Job Desc</li>
                                             <li class="list-group-item">Contohkan Dan Peragakan</li>
                                             <li class="list-group-item">Berikan Step Stepnya</li>
                                             <li class="list-group-item">Mengidentifikasi Proses</li>
-                                            <li class="list-group-item">Klasifikasikan Tugas</li>
+                                            <li class="list-group-item">Klasifikasikan Job Desc</li>
                                             <li class="list-group-item">Develop Action Plans</li>
                                             <li class="list-group-item">Monitor Performance</li>
                                         </ul>
